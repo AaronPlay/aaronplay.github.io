@@ -4,7 +4,7 @@
   <subtitle><![CDATA[IT 技术 思维]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-10-27T11:14:51.398Z</updated>
+  <updated>2014-10-27T11:30:41.491Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,78 +13,6 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
-  
-  <entry>
-    <title><![CDATA[集合浅尝]]></title>
-    <link href="http://yoursite.com/2014/10/27/Collection/"/>
-    <id>http://yoursite.com/2014/10/27/Collection/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:30:58.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="链表底层">链表底层</h3>
-<p>链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。</p>
-<pre><code><span class="type">Iterator</span>&lt;E&gt;    itr = c.<span class="keyword">iterator</span>();
-c.next;
-</code></pre><p><img src="https://aaronplay.github.io/raw/2014-10-26/iterator.png" alt=""></p>
-<p>所以要注意，在初始化之后，不能直接remove 需要先next后在remove</p>
-<p><strong>对比</strong>C++:由于是通过数组储存，寻找目标可以直接通过索引(i++)访问。</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="链表底层">链表底层</h3>
-<p>链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。</p>
-<pre><code><span class="type">Iterator</span>&lt;E]]>
-    </summary>
-    
-      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
-    
-      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[ADB浅尝]]></title>
-    <link href="http://yoursite.com/2014/10/27/ADB/"/>
-    <id>http://yoursite.com/2014/10/27/ADB/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:29:52.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="背景">背景</h3>
-<p>Android debug Bridge(ADB)在处于在<sdk>/platform-tools/文件夹下，在该文件夹下也有很多常用的Android开发工具，详情查看<a href="http://developer.android.com/tools/help/index.html" target="_blank" rel="external">Android developer</a>。由它的名字可以知道，adb用作开发者在PC端调试Android实例的（具体模块操作如下图），通过命令行（类似linux）进行操作的。</sdk></p>
-<p><img src="https://aaronplay.github.io/raw/2014-10-27/adb.png" alt=""></p>
-<p>从图中可看出，adb是由serve进行中央调度管理。</p>
-<h3 id="语法">语法</h3>
-<pre><code>//就是一个脚本命令
-adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span class="operator">-s</span> &lt;serialNumber&gt;] &lt;command&gt;
-</code></pre><h3 id="用法">用法</h3>
-<ul>
-<li>查看模拟器/设备的实例状况</li>
-<li>管理application(如，安装和删除)</li>
-<li>端口管理。用于连接本地服务器，wifi等端口分配</li>
-<li>文件的pull和push</li>
-<li><strong>shell</strong>的运用<ul>
-<li>activity manager (am)</li>
-<li>package manager (pm)</li>
-<li><a href="http://aaronplay.github.io/2014/10/Andorid-sqlite/" target="_blank" rel="external">sqlite3</a> 的远程使用</li>
-<li>screenrecord(类似截图，不同是这个截的是视频),这个功能需要sdk 4.4以上才支持</li>
-<li>UI/Application Monkey test。随机输入脉冲，进行压力测试</li>
-<li>logat</li>
-</ul>
-</li>
-</ul>
-<p>ps：具体用法请浏览底端的参考页面。</p>
-<h3 id="外置工具集成">外置工具集成</h3>
-<p>思考，很多的外置工具是通过adb的工具进行集成的，如我们常用的log日志的输出。</p>
-<hr>
-<p>参考：<a href="http://developer.android.com/tools/help/adb.html" target="_blank" rel="external">http://developer.android.com/tools/help/adb.html</a></p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="背景">背景</h3>
-<p>Android debug Bridge(ADB)在处于在<sdk>/platform-tools/文件夹下，在该文件夹下也有很多常用的Android开发工具，详情查看<a href="http://developer.android]]>
-    </summary>
-    
-      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
-    
-      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
-    
-  </entry>
   
   <entry>
     <title><![CDATA[IT能力表]]></title>
@@ -123,6 +51,22 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
     </summary>
     
       <category term="能力" scheme="http://yoursite.com/categories/%E8%83%BD%E5%8A%9B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[blog upload]]></title>
+    <link href="http://yoursite.com/2014/10/27/build-blog/"/>
+    <id>http://yoursite.com/2014/10/27/build-blog/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T10:31:52.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="build_up_the_blog_with_jekyll">build up the blog with jekyll</h3>
+<pre><code>It <span class="keyword">is</span> really funny <span class="keyword">to</span> <span class="keyword">write</span> <span class="keyword">in</span> markdown. 
+</code></pre>]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="build_up_the_blog_with_jekyll">build up the blog with jekyll</h3>
+<pre><code>It <span class="keyword">is</span> really funny <span c]]>
+    </summary>
     
   </entry>
   
@@ -174,143 +118,18 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
   </entry>
   
   <entry>
-    <title><![CDATA[blog upload]]></title>
-    <link href="http://yoursite.com/2014/10/27/build-blog/"/>
-    <id>http://yoursite.com/2014/10/27/build-blog/</id>
+    <title><![CDATA[博客搬家]]></title>
+    <link href="http://yoursite.com/2014/10/27/bloglist/"/>
+    <id>http://yoursite.com/2014/10/27/bloglist/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:31:52.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="build_up_the_blog_with_jekyll">build up the blog with jekyll</h3>
-<pre><code>It <span class="keyword">is</span> really funny <span class="keyword">to</span> <span class="keyword">write</span> <span class="keyword">in</span> markdown. 
-</code></pre>]]></content>
-    <summary type="html">
-    <![CDATA[<h3 id="build_up_the_blog_with_jekyll">build up the blog with jekyll</h3>
-<pre><code>It <span class="keyword">is</span> really funny <span c]]>
-    </summary>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[Effective Java]]></title>
-    <link href="http://yoursite.com/2014/10/27/Effective-Java/"/>
-    <id>http://yoursite.com/2014/10/27/Effective-Java/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:31:36.000Z</updated>
-    <content type="html"><![CDATA[<p>有关Effective 系列的书籍是建立在一定的项目经验的基础进行总结的，同样的，读者最好的在有一定的项目经验后阅读较为容易理解，但是即使没有经验同样收获也不少，同样地在每次完成项目之后来看会有一个质变的效果。</p>
-<h2 id="2_创建与销毁对象">2 创建与销毁对象</h2>
-<ul>
-<li>考虑静态工厂方法替代构造器</li>
-<li>遇到多个构造器参数时需要考虑用构造器</li>
-<li>用私有构造器或枚举类型强化Singleton属性</li>
-<li>通过私有化构造器强化不可实例化的能力</li>
-<li>避免创建不必要的对象</li>
-<li>消除过期的对象引用</li>
-<li>避免使用终结方法</li>
-</ul>
-<h2 id="3_对于所有对象都通用的方法">3 对于所有对象都通用的方法</h2>
-<ul>
-<li>覆盖equals时请遵守通用约定</li>
-<li>覆盖equals时总要覆盖hashCode</li>
-<li>始终要覆盖toString</li>
-<li>谨慎地覆盖clone</li>
-<li>考虑实现Comparable接口</li>
-</ul>
-<h2 id="4_类和接口">4 类和接口</h2>
-<ul>
-<li>使类和成员的可访问性最小化</li>
-<li>在公有类中使用访问方法而非公有域</li>
-<li>使可变性最小化</li>
-<li>复合优于继承</li>
-<li>要么为继承而设计，并提供文档说明，要么就禁止继承</li>
-<li>接口优于抽象类</li>
-<li>接口只用于定义类型</li>
-<li>类层次优于便签类</li>
-<li>用函数对象表示策略</li>
-<li>优先考虑静态成员类</li>
-<li>优先考虑类型安全的异构容器</li>
-</ul>
-<h2 id="5_泛型">5 泛型</h2>
-<ul>
-<li>请不要再新代码中使用原生态类型</li>
-<li>消除非受检警告</li>
-<li>列表优先于数组</li>
-<li>优先考虑泛型</li>
-<li>优先考虑泛型方法</li>
-<li>利用有限制通配符来提高API的灵活性</li>
-</ul>
-<h2 id="6_枚举和注解">6 枚举和注解</h2>
-<ul>
-<li>用enum代替int常量</li>
-<li>用实例域替代序数</li>
-<li>用EnumSet代替位域</li>
-<li>用EnumMap代替序数索引</li>
-<li>用接口模拟可伸缩的枚举</li>
-<li>注解优先于命名模式</li>
-<li>坚持使用override注解</li>
-<li>用标记接口定义类型</li>
-</ul>
-<h2 id="7_方法">7 方法</h2>
-<ul>
-<li>检查参数的有效性</li>
-<li>必要时进行保护性拷贝</li>
-<li>谨慎设计方法签名</li>
-<li>慎用重载</li>
-<li>慎用可变参数</li>
-<li>返回零长度的数组或者集合，而不是null</li>
-<li>为所有导出的API元素编写文档注释</li>
-</ul>
-<h2 id="8_通用程序设计">8 通用程序设计</h2>
-<ul>
-<li>将局部变量的作用域最小化</li>
-<li>for-each循环优先于传统的for循环</li>
-<li>了解和使用类库</li>
-<li>如果要需要精确答案，请避免使用float和double</li>
-<li>基本类型优先于装箱基本类型</li>
-<li>如果其他类型更适合，则尽量避免使用字符串</li>
-<li>当心字符串连接的性能</li>
-<li>通过接口引用对象</li>
-<li>接口优先于反射机制</li>
-<li>谨慎地使用本地方法</li>
-<li>谨慎地进行优化</li>
-<li>遵守普遍接受的命名习惯</li>
-</ul>
-<h2 id="9_异常">9 异常</h2>
-<ul>
-<li>只针对异常的情况才使用异常</li>
-<li>对可恢复的情况使用受检异常，对编程错误使用运行时异常</li>
-<li>避免不必要地使用受检的异常</li>
-<li>优先使用标准的异常</li>
-<li>抛出与抽象相对应的异常</li>
-<li>每个方法抛出的异常都要有文档</li>
-<li>在细节消息中包含能捕获失败的信息</li>
-<li>努力使失败保持原子性</li>
-<li>不要忽略异常</li>
-</ul>
-<h2 id="10_并发">10 并发</h2>
-<ul>
-<li>同步访问共享的可变数据</li>
-<li>避免过度同步</li>
-<li>executor和task优先于线程</li>
-<li>并发工具优先于wait和notify</li>
-<li>线程安全性的文档化</li>
-<li>慎用延迟初始化</li>
-<li>不要依赖于线程调度器</li>
-<li>避免使用线程组</li>
-</ul>
-<h2 id="11_序列化">11 序列化</h2>
-<ul>
-<li>谨慎地实现Serializable接口</li>
-<li>考虑使用自定义的序列化形式</li>
-<li>保护性地编写readObject方法</li>
-<li>对于实力控制，枚举类型优先于readResolve</li>
-<li>考略用序列化代理代替序列化实例</li>
-</ul>
+    <updated>2014-10-27T10:32:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://blog.csdn.net/aaronplay</a></h2>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>有关Effective 系列的书籍是建立在一定的项目经验的基础进行总结的，同样的，读者最好的在有一定的项目经验后阅读较为容易理解，但是即使没有经验同样收获也不少，同样地在每次完成项目之后来看会有一个质变的效果。</p>
-<h2 id="2_创建与销毁对象">2 创建与销毁对]]>
+    <![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://b]]>
     </summary>
     
-      <category term="开发" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91/"/>
+      <category term="Doc" scheme="http://yoursite.com/categories/Doc/"/>
     
   </entry>
   
@@ -319,7 +138,7 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
     <link href="http://yoursite.com/2014/10/27/alogrithm-structure/"/>
     <id>http://yoursite.com/2014/10/27/alogrithm-structure/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:31:41.000Z</updated>
+    <updated>2014-10-27T11:21:03.000Z</updated>
     <content type="html"><![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
 <p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
 <blockquote>
@@ -339,7 +158,7 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
 <p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
 <p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
 <p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
-<p>  <img src="/raw/2014-10-06/sort.png" alt=""></p>
+<p>  <img src="/img/raw/2014-10-06/sort.png" alt=""></p>
 <p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
 </li>
 <li><p><strong>查找</strong></p>
@@ -601,73 +420,77 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
   </entry>
   
   <entry>
-    <title><![CDATA[SQL浅尝]]></title>
-    <link href="http://yoursite.com/2014/10/27/SQL/"/>
-    <id>http://yoursite.com/2014/10/27/SQL/</id>
+    <title><![CDATA[Android SQLite 用法]]></title>
+    <link href="http://yoursite.com/2014/10/27/Andorid-sqlite/"/>
+    <id>http://yoursite.com/2014/10/27/Andorid-sqlite/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:32:05.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="SQL背景">SQL背景</h3>
-<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987年成为国际标准。但不同数据库会对他进行扩充，所以不同数据库间会出现一个数据库出现一套SQL语句，但是差别不大。</p>
-<h3 id="语言特点">语言特点</h3>
-<p>SQL作为一种高级的非过程化语言，允许用户在高层数据数据结构上工作。</p>
-<p>SQL同时也是数据库文件格式和扩展名。</p>
-<p>SQL包含3个部分：</p>
-<ol>
-<li>DD(define)L     （常用）</li>
-<li>DM(Manage)L   （常用）</li>
-<li>DC(Control)L  </li>
-</ol>
-<h3 id="安全问题">安全问题</h3>
-<p>许多开发人员习惯以字符串组合创建SQL指令，而且又使用<strong>系统管理员级</strong>的账号连接数据库，因此让黑客有机会利用SQL组合方式进行攻击（如，drop table;、 delete * from table;），这种攻击成为SQL注入。</p>
-<p>预防方法：<a href="http://zh.wikipedia.org/wiki/%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2" target="_blank" rel="external">参数化查询</a>（在Java中，就是利用占位符，然后进行替代）</p>
-<h3 id="常用语句">常用语句</h3>
-<p><strong>DML：</strong></p>
-<ul>
-<li><p>SELECT</p>
-<pre><code>  <span class="operator"><span class="keyword">SELECT</span> * 
-  <span class="keyword">FROM</span> 
-  <span class="keyword">WHERE</span>
-  <span class="keyword">GROUP</span>
-  <span class="keyword">BY</span>
-  <span class="keyword">ORDER</span>
-  <span class="keyword">BY</span></span>
-</code></pre></li>
-</ul>
-<ul>
-<li><p>UPDATE</p>
-</li>
-<li><p>DELETE</p>
-</li>
-<li><p>INSERT INTO    </p>
-</li>
-</ul>
-<p><strong>DDL：</strong></p>
-<ul>
-<li>CREATE DATABASE</li>
-<li>ALTER DATABASE</li>
-<li>CREATE TABLE</li>
-<li>ALTER TABLE</li>
-<li>DROP TABLE</li>
-<li>CREATE INDEX</li>
-<li>DROP INDEX</li>
-</ul>
-<h3 id="强化学习">强化学习</h3>
-<p><a href="http://www.w3school.com.cn/sql/" target="_blank" rel="external">w3cschool</a></p>
-<hr>
-<p>参考：</p>
-<ul>
-<li><a href="http://zh.wikipedia.org/wiki/SQL" target="_blank" rel="external">wiki</a></li>
-<li><a href="http://www.w3school.com.cn/sql/sql_syntax.asp" target="_blank" rel="external">w3cschool</a></li>
-</ul>
+    <updated>2014-10-27T11:17:50.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="SQLite背景">SQLite背景</h2>
+<p>SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以这个特征很适合作为applciation的文件格式。（参考 <a href="http://www.sqlite.org/about.html" target="_blank" rel="external">about SQLite</a>）</p>
+<h2 id="SQLite用法">SQLite用法</h2>
+<p>为了更为方便地在Android上使用，我们们把方法卸载onCreate里。code source(<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a>)</p>
+<pre><code>    <span class="annotation">@Override</span>
+<span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span>(Bundle savedInstanceState) {
+    <span class="keyword">super</span>.onCreate(savedInstanceState);
+
+    <span class="comment">//打开或创建test.db数据库</span>
+    SQLiteDatabase db = openOrCreateDatabase(<span class="string">"test.db"</span>, Context.MODE_PRIVATE, <span class="keyword">null</span>);
+    db.execSQL(<span class="string">"DROP TABLE IF EXISTS person"</span>);
+    <span class="comment">//创建person表</span>
+    db.execSQL(<span class="string">"CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)"</span>);
+    Person person = <span class="keyword">new</span> Person();
+    person.name = <span class="string">"john"</span>;
+    person.age = <span class="number">30</span>;
+    <span class="comment">//插入数据</span>
+    db.execSQL(<span class="string">"INSERT INTO person VALUES (NULL, ?, ?)"</span>, <span class="keyword">new</span> Object[]{person.name, person.age});
+
+    person.name = <span class="string">"david"</span>;
+    person.age = <span class="number">33</span>;
+    <span class="comment">//ContentValues以键值对的形式存放数据</span>
+    ContentValues cv = <span class="keyword">new</span> ContentValues();
+    cv.put(<span class="string">"name"</span>, person.name);
+    cv.put(<span class="string">"age"</span>, person.age);
+    <span class="comment">//插入ContentValues中的数据</span>
+    db.insert(<span class="string">"person"</span>, <span class="keyword">null</span>, cv);
+
+    cv = <span class="keyword">new</span> ContentValues();
+    cv.put(<span class="string">"age"</span>, <span class="number">35</span>);
+    <span class="comment">//更新数据</span>
+    db.update(<span class="string">"person"</span>, cv, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"john"</span>});
+
+    Cursor c = db.rawQuery(<span class="string">"SELECT * FROM person WHERE age &gt;= ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"33"</span>});
+    <span class="keyword">while</span> (c.moveToNext()) {
+        <span class="keyword">int</span> _id = c.getInt(c.getColumnIndex(<span class="string">"_id"</span>));
+        String name = c.getString(c.getColumnIndex(<span class="string">"name"</span>));
+        <span class="keyword">int</span> age = c.getInt(c.getColumnIndex(<span class="string">"age"</span>));
+        Log.i(<span class="string">"db"</span>, <span class="string">"_id=&gt;"</span> + _id + <span class="string">", name=&gt;"</span> + name + <span class="string">", age=&gt;"</span> + age);
+    }
+    c.close();
+
+    <span class="comment">//删除数据</span>
+    db.delete(<span class="string">"person"</span>, <span class="string">"age &lt; ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"35"</span>});
+
+    <span class="comment">//关闭当前数据库</span>
+    db.close();
+
+    <span class="comment">//删除test.db数据库</span>
+<span class="comment">//        deleteDatabase("test.db");</span>
+}
+</code></pre><p>执行完代码之后，会生成相关的数据库文件（.db）。如上文的代码会生成 /data/data/com.example.test/databases/test.db </p>
+<h3 id="在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。">在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。</h3>
+<p>DBHelper.java(数据库的生成)</p>
+<p>DBManager.java(数据库的管理)</p>
+<p><img src="/img/raw/2014-10-26/DB.png" alt=""></p>
+<p>博文参考：<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a></p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="SQL背景">SQL背景</h3>
-<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987]]>
+    <![CDATA[<h2 id="SQLite背景">SQLite背景</h2>
+<p>SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以]]>
     </summary>
     
       <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
     
-      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
     
   </entry>
   
@@ -761,72 +584,194 @@ Sole <span class="function"><span class="keyword">constructor</span>.</span>
   </entry>
   
   <entry>
-    <title><![CDATA[Android SQLite 用法]]></title>
-    <link href="http://yoursite.com/2014/10/27/Andorid-sqlite/"/>
-    <id>http://yoursite.com/2014/10/27/Andorid-sqlite/</id>
+    <title><![CDATA[Effective Java]]></title>
+    <link href="http://yoursite.com/2014/10/27/Effective-Java/"/>
+    <id>http://yoursite.com/2014/10/27/Effective-Java/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T11:14:24.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="SQLite背景">SQLite背景</h2>
-<p>SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以这个特征很适合作为applciation的文件格式。（参考 <a href="http://www.sqlite.org/about.html" target="_blank" rel="external">about SQLite</a>）</p>
-<h2 id="SQLite用法">SQLite用法</h2>
-<p>为了更为方便地在Android上使用，我们们把方法卸载onCreate里。code source(<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a>)</p>
-<pre><code>    <span class="annotation">@Override</span>
-<span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span>(Bundle savedInstanceState) {
-    <span class="keyword">super</span>.onCreate(savedInstanceState);
-
-    <span class="comment">//打开或创建test.db数据库</span>
-    SQLiteDatabase db = openOrCreateDatabase(<span class="string">"test.db"</span>, Context.MODE_PRIVATE, <span class="keyword">null</span>);
-    db.execSQL(<span class="string">"DROP TABLE IF EXISTS person"</span>);
-    <span class="comment">//创建person表</span>
-    db.execSQL(<span class="string">"CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)"</span>);
-    Person person = <span class="keyword">new</span> Person();
-    person.name = <span class="string">"john"</span>;
-    person.age = <span class="number">30</span>;
-    <span class="comment">//插入数据</span>
-    db.execSQL(<span class="string">"INSERT INTO person VALUES (NULL, ?, ?)"</span>, <span class="keyword">new</span> Object[]{person.name, person.age});
-
-    person.name = <span class="string">"david"</span>;
-    person.age = <span class="number">33</span>;
-    <span class="comment">//ContentValues以键值对的形式存放数据</span>
-    ContentValues cv = <span class="keyword">new</span> ContentValues();
-    cv.put(<span class="string">"name"</span>, person.name);
-    cv.put(<span class="string">"age"</span>, person.age);
-    <span class="comment">//插入ContentValues中的数据</span>
-    db.insert(<span class="string">"person"</span>, <span class="keyword">null</span>, cv);
-
-    cv = <span class="keyword">new</span> ContentValues();
-    cv.put(<span class="string">"age"</span>, <span class="number">35</span>);
-    <span class="comment">//更新数据</span>
-    db.update(<span class="string">"person"</span>, cv, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"john"</span>});
-
-    Cursor c = db.rawQuery(<span class="string">"SELECT * FROM person WHERE age &gt;= ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"33"</span>});
-    <span class="keyword">while</span> (c.moveToNext()) {
-        <span class="keyword">int</span> _id = c.getInt(c.getColumnIndex(<span class="string">"_id"</span>));
-        String name = c.getString(c.getColumnIndex(<span class="string">"name"</span>));
-        <span class="keyword">int</span> age = c.getInt(c.getColumnIndex(<span class="string">"age"</span>));
-        Log.i(<span class="string">"db"</span>, <span class="string">"_id=&gt;"</span> + _id + <span class="string">", name=&gt;"</span> + name + <span class="string">", age=&gt;"</span> + age);
-    }
-    c.close();
-
-    <span class="comment">//删除数据</span>
-    db.delete(<span class="string">"person"</span>, <span class="string">"age &lt; ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"35"</span>});
-
-    <span class="comment">//关闭当前数据库</span>
-    db.close();
-
-    <span class="comment">//删除test.db数据库</span>
-<span class="comment">//        deleteDatabase("test.db");</span>
-}
-</code></pre><p>执行完代码之后，会生成相关的数据库文件（.db）。如上文的代码会生成 /data/data/com.example.test/databases/test.db </p>
-<h3 id="在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。">在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。</h3>
-<p>DBHelper.java(数据库的生成)</p>
-<p>DBManager.java(数据库的管理)</p>
-<p><img src="img/raw/2014-10-26/DB.png" alt=""></p>
-<p>博文参考：<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a></p>
+    <updated>2014-10-27T10:31:36.000Z</updated>
+    <content type="html"><![CDATA[<p>有关Effective 系列的书籍是建立在一定的项目经验的基础进行总结的，同样的，读者最好的在有一定的项目经验后阅读较为容易理解，但是即使没有经验同样收获也不少，同样地在每次完成项目之后来看会有一个质变的效果。</p>
+<h2 id="2_创建与销毁对象">2 创建与销毁对象</h2>
+<ul>
+<li>考虑静态工厂方法替代构造器</li>
+<li>遇到多个构造器参数时需要考虑用构造器</li>
+<li>用私有构造器或枚举类型强化Singleton属性</li>
+<li>通过私有化构造器强化不可实例化的能力</li>
+<li>避免创建不必要的对象</li>
+<li>消除过期的对象引用</li>
+<li>避免使用终结方法</li>
+</ul>
+<h2 id="3_对于所有对象都通用的方法">3 对于所有对象都通用的方法</h2>
+<ul>
+<li>覆盖equals时请遵守通用约定</li>
+<li>覆盖equals时总要覆盖hashCode</li>
+<li>始终要覆盖toString</li>
+<li>谨慎地覆盖clone</li>
+<li>考虑实现Comparable接口</li>
+</ul>
+<h2 id="4_类和接口">4 类和接口</h2>
+<ul>
+<li>使类和成员的可访问性最小化</li>
+<li>在公有类中使用访问方法而非公有域</li>
+<li>使可变性最小化</li>
+<li>复合优于继承</li>
+<li>要么为继承而设计，并提供文档说明，要么就禁止继承</li>
+<li>接口优于抽象类</li>
+<li>接口只用于定义类型</li>
+<li>类层次优于便签类</li>
+<li>用函数对象表示策略</li>
+<li>优先考虑静态成员类</li>
+<li>优先考虑类型安全的异构容器</li>
+</ul>
+<h2 id="5_泛型">5 泛型</h2>
+<ul>
+<li>请不要再新代码中使用原生态类型</li>
+<li>消除非受检警告</li>
+<li>列表优先于数组</li>
+<li>优先考虑泛型</li>
+<li>优先考虑泛型方法</li>
+<li>利用有限制通配符来提高API的灵活性</li>
+</ul>
+<h2 id="6_枚举和注解">6 枚举和注解</h2>
+<ul>
+<li>用enum代替int常量</li>
+<li>用实例域替代序数</li>
+<li>用EnumSet代替位域</li>
+<li>用EnumMap代替序数索引</li>
+<li>用接口模拟可伸缩的枚举</li>
+<li>注解优先于命名模式</li>
+<li>坚持使用override注解</li>
+<li>用标记接口定义类型</li>
+</ul>
+<h2 id="7_方法">7 方法</h2>
+<ul>
+<li>检查参数的有效性</li>
+<li>必要时进行保护性拷贝</li>
+<li>谨慎设计方法签名</li>
+<li>慎用重载</li>
+<li>慎用可变参数</li>
+<li>返回零长度的数组或者集合，而不是null</li>
+<li>为所有导出的API元素编写文档注释</li>
+</ul>
+<h2 id="8_通用程序设计">8 通用程序设计</h2>
+<ul>
+<li>将局部变量的作用域最小化</li>
+<li>for-each循环优先于传统的for循环</li>
+<li>了解和使用类库</li>
+<li>如果要需要精确答案，请避免使用float和double</li>
+<li>基本类型优先于装箱基本类型</li>
+<li>如果其他类型更适合，则尽量避免使用字符串</li>
+<li>当心字符串连接的性能</li>
+<li>通过接口引用对象</li>
+<li>接口优先于反射机制</li>
+<li>谨慎地使用本地方法</li>
+<li>谨慎地进行优化</li>
+<li>遵守普遍接受的命名习惯</li>
+</ul>
+<h2 id="9_异常">9 异常</h2>
+<ul>
+<li>只针对异常的情况才使用异常</li>
+<li>对可恢复的情况使用受检异常，对编程错误使用运行时异常</li>
+<li>避免不必要地使用受检的异常</li>
+<li>优先使用标准的异常</li>
+<li>抛出与抽象相对应的异常</li>
+<li>每个方法抛出的异常都要有文档</li>
+<li>在细节消息中包含能捕获失败的信息</li>
+<li>努力使失败保持原子性</li>
+<li>不要忽略异常</li>
+</ul>
+<h2 id="10_并发">10 并发</h2>
+<ul>
+<li>同步访问共享的可变数据</li>
+<li>避免过度同步</li>
+<li>executor和task优先于线程</li>
+<li>并发工具优先于wait和notify</li>
+<li>线程安全性的文档化</li>
+<li>慎用延迟初始化</li>
+<li>不要依赖于线程调度器</li>
+<li>避免使用线程组</li>
+</ul>
+<h2 id="11_序列化">11 序列化</h2>
+<ul>
+<li>谨慎地实现Serializable接口</li>
+<li>考虑使用自定义的序列化形式</li>
+<li>保护性地编写readObject方法</li>
+<li>对于实力控制，枚举类型优先于readResolve</li>
+<li>考略用序列化代理代替序列化实例</li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="SQLite背景">SQLite背景</h2>
-<p>SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以]]>
+    <![CDATA[<p>有关Effective 系列的书籍是建立在一定的项目经验的基础进行总结的，同样的，读者最好的在有一定的项目经验后阅读较为容易理解，但是即使没有经验同样收获也不少，同样地在每次完成项目之后来看会有一个质变的效果。</p>
+<h2 id="2_创建与销毁对象">2 创建与销毁对]]>
+    </summary>
+    
+      <category term="开发" scheme="http://yoursite.com/categories/%E5%BC%80%E5%8F%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[集合浅尝]]></title>
+    <link href="http://yoursite.com/2014/10/27/Collection/"/>
+    <id>http://yoursite.com/2014/10/27/Collection/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T11:20:10.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="链表底层">链表底层</h3>
+<p>链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。</p>
+<pre><code><span class="type">Iterator</span>&lt;E&gt;    itr = c.<span class="keyword">iterator</span>();
+c.next;
+</code></pre><p><img src="/img/raw/2014-10-26/iterator.png" alt=""></p>
+<p>所以要注意，在初始化之后，不能直接remove 需要先next后在remove</p>
+<p><strong>对比</strong>C++:由于是通过数组储存，寻找目标可以直接通过索引(i++)访问。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="链表底层">链表底层</h3>
+<p>链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。</p>
+<pre><code><span class="type">Iterator</span>&lt;E]]>
+    </summary>
+    
+      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[ADB浅尝]]></title>
+    <link href="http://yoursite.com/2014/10/27/ADB/"/>
+    <id>http://yoursite.com/2014/10/27/ADB/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T11:20:32.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="背景">背景</h3>
+<p>Android debug Bridge(ADB)在处于在<sdk>/platform-tools/文件夹下，在该文件夹下也有很多常用的Android开发工具，详情查看<a href="http://developer.android.com/tools/help/index.html" target="_blank" rel="external">Android developer</a>。由它的名字可以知道，adb用作开发者在PC端调试Android实例的（具体模块操作如下图），通过命令行（类似linux）进行操作的。</sdk></p>
+<p><img src="/img/raw/2014-10-27/adb.png" alt=""></p>
+<p>从图中可看出，adb是由serve进行中央调度管理。</p>
+<h3 id="语法">语法</h3>
+<pre><code>//就是一个脚本命令
+adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span class="operator">-s</span> &lt;serialNumber&gt;] &lt;command&gt;
+</code></pre><h3 id="用法">用法</h3>
+<ul>
+<li>查看模拟器/设备的实例状况</li>
+<li>管理application(如，安装和删除)</li>
+<li>端口管理。用于连接本地服务器，wifi等端口分配</li>
+<li>文件的pull和push</li>
+<li><strong>shell</strong>的运用<ul>
+<li>activity manager (am)</li>
+<li>package manager (pm)</li>
+<li><a href="http://aaronplay.github.io/2014/10/Andorid-sqlite/" target="_blank" rel="external">sqlite3</a> 的远程使用</li>
+<li>screenrecord(类似截图，不同是这个截的是视频),这个功能需要sdk 4.4以上才支持</li>
+<li>UI/Application Monkey test。随机输入脉冲，进行压力测试</li>
+<li>logat</li>
+</ul>
+</li>
+</ul>
+<p>ps：具体用法请浏览底端的参考页面。</p>
+<h3 id="外置工具集成">外置工具集成</h3>
+<p>思考，很多的外置工具是通过adb的工具进行集成的，如我们常用的log日志的输出。</p>
+<hr>
+<p>参考：<a href="http://developer.android.com/tools/help/adb.html" target="_blank" rel="external">http://developer.android.com/tools/help/adb.html</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="背景">背景</h3>
+<p>Android debug Bridge(ADB)在处于在<sdk>/platform-tools/文件夹下，在该文件夹下也有很多常用的Android开发工具，详情查看<a href="http://developer.android]]>
     </summary>
     
       <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
@@ -836,18 +781,73 @@ Sole <span class="function"><span class="keyword">constructor</span>.</span>
   </entry>
   
   <entry>
-    <title><![CDATA[博客搬家]]></title>
-    <link href="http://yoursite.com/2014/10/27/bloglist/"/>
-    <id>http://yoursite.com/2014/10/27/bloglist/</id>
+    <title><![CDATA[SQL浅尝]]></title>
+    <link href="http://yoursite.com/2014/10/27/SQL/"/>
+    <id>http://yoursite.com/2014/10/27/SQL/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:32:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://blog.csdn.net/aaronplay</a></h2>
+    <updated>2014-10-27T10:32:05.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="SQL背景">SQL背景</h3>
+<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987年成为国际标准。但不同数据库会对他进行扩充，所以不同数据库间会出现一个数据库出现一套SQL语句，但是差别不大。</p>
+<h3 id="语言特点">语言特点</h3>
+<p>SQL作为一种高级的非过程化语言，允许用户在高层数据数据结构上工作。</p>
+<p>SQL同时也是数据库文件格式和扩展名。</p>
+<p>SQL包含3个部分：</p>
+<ol>
+<li>DD(define)L     （常用）</li>
+<li>DM(Manage)L   （常用）</li>
+<li>DC(Control)L  </li>
+</ol>
+<h3 id="安全问题">安全问题</h3>
+<p>许多开发人员习惯以字符串组合创建SQL指令，而且又使用<strong>系统管理员级</strong>的账号连接数据库，因此让黑客有机会利用SQL组合方式进行攻击（如，drop table;、 delete * from table;），这种攻击成为SQL注入。</p>
+<p>预防方法：<a href="http://zh.wikipedia.org/wiki/%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2" target="_blank" rel="external">参数化查询</a>（在Java中，就是利用占位符，然后进行替代）</p>
+<h3 id="常用语句">常用语句</h3>
+<p><strong>DML：</strong></p>
+<ul>
+<li><p>SELECT</p>
+<pre><code>  <span class="operator"><span class="keyword">SELECT</span> * 
+  <span class="keyword">FROM</span> 
+  <span class="keyword">WHERE</span>
+  <span class="keyword">GROUP</span>
+  <span class="keyword">BY</span>
+  <span class="keyword">ORDER</span>
+  <span class="keyword">BY</span></span>
+</code></pre></li>
+</ul>
+<ul>
+<li><p>UPDATE</p>
+</li>
+<li><p>DELETE</p>
+</li>
+<li><p>INSERT INTO    </p>
+</li>
+</ul>
+<p><strong>DDL：</strong></p>
+<ul>
+<li>CREATE DATABASE</li>
+<li>ALTER DATABASE</li>
+<li>CREATE TABLE</li>
+<li>ALTER TABLE</li>
+<li>DROP TABLE</li>
+<li>CREATE INDEX</li>
+<li>DROP INDEX</li>
+</ul>
+<h3 id="强化学习">强化学习</h3>
+<p><a href="http://www.w3school.com.cn/sql/" target="_blank" rel="external">w3cschool</a></p>
+<hr>
+<p>参考：</p>
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/SQL" target="_blank" rel="external">wiki</a></li>
+<li><a href="http://www.w3school.com.cn/sql/sql_syntax.asp" target="_blank" rel="external">w3cschool</a></li>
+</ul>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://b]]>
+    <![CDATA[<h3 id="SQL背景">SQL背景</h3>
+<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987]]>
     </summary>
     
-      <category term="Doc" scheme="http://yoursite.com/categories/Doc/"/>
+      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
     
   </entry>
   
