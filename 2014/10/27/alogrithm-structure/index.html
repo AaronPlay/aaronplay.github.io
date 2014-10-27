@@ -1,0 +1,628 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>算法与数据结构 | AaronPlay&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="aaronplay">
+    
+    <meta name="description" content="算法与数据结构
+在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&amp;gt;写代码-&amp;gt;测试-&amp;gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    
+
+本">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml" title="AaronPlay&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="AaronPlay&#39;s Blog" title="AaronPlay&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="AaronPlay&#39;s Blog">AaronPlay&#39;s Blog</a></h1>
+				<h2 class="blog-motto">IT 技术 思维</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/27/alogrithm-structure/" title="算法与数据结构" itemprop="url">算法与数据结构</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="aaronplay">aaronplay</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-10-27T10:28:07.000Z" itemprop="datePublished">10月 27 2014</time>
+    更新日期:<time datetime="2014-10-27T10:31:41.000Z" itemprop="dateModified">10月 27 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法与数据结构"><span class="toc-number">1.</span> <span class="toc-text">算法与数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.1.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构"><span class="toc-number">1.2.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见时间复杂度的算法"><span class="toc-number">1.3.</span> <span class="toc-text">常见时间复杂度的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法&数据结构学习资源"><span class="toc-number">1.4.</span> <span class="toc-text">算法&数据结构学习资源</span></a></li></ol></li></ol>
+		</div>
+		
+		<h1 id="算法与数据结构">算法与数据结构</h1>
+<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
+<blockquote>
+<p><strong>本文目的：打造一个算法模板，把适用情况总结出来，以便快速定位，套用。</strong></p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<blockquote>
+<p>思考：在解决问题的时候，我们都希望直接能达到最好的效果，但人的思考是从简单开始，再到复杂，之后慢慢优化，所以不存在最优的效果，只有在目前所在的状况达到最优的答案，以后会有更好的算法。</p>
+</blockquote>
+<p>基于计算机运算的操作，不外乎就是对数据的增删查改，而这个操作的前提是找到需要目标。</p>
+<p><strong>注意好细节上处理，边界问题等，可以通过简单的举例来测试</strong></p>
+<ul>
+<li><p><strong>暴力法（枚举）</strong></p>
+<p>  这是我们最容易想到，就是一个个地尝试，相当万能的解法，但这种情况只适用于在计算机强大的能力下。这样的代码一般都是很短的，读起来也是最省力了。但一般不用，因为计算机可以帮助我们做得更多。</p>
+</li>
+<li><p><strong>排序</strong></p>
+<p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
+<p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
+<p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
+<p>  <img src="/raw/2014-10-06/sort.png" alt=""></p>
+<p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
+</li>
+<li><p><strong>查找</strong></p>
+<p>  为了更加高效地查找，我们一般在结构化的数据基础上进行查找。除非有特别的情况，否则已排序的数组的情况下，一般选用<strong>二分查找</strong>（能确保自己能正确写出来吗？）。</p>
+</li>
+</ul>
+<p><em>以上算法适用于在单个目标的查找修改，对于数据之间有关联，或者是对数据之间进行运算，可以选择更加优秀的算法来提高的性能。</em></p>
+<p>接下来，涉及到的算法按以下框架进行书写：</p>
+<blockquote>
+<p>原理：<br>适用情况：<br>实现框架：<br>例子：</p>
+</blockquote>
+<ul>
+<li><p><strong>递归</strong></p>
+<p>  原理：  根据目前的状况，等量改变参数，对自身函数进行调用。</p>
+<p>  适用情况：可以把当前问题抽象以层次为单位进行解决的，层与层之间的状态有关联。</p>
+<p>  实现框架：</p>
+<pre><code>  &gt;1.设置收敛界限
+  &gt;
+  &gt;2.递归公式
+</code></pre><p>  伪代码：</p>
+<pre><code>  <span class="keyword">int</span> reserve(TreeNode* root){
+          <span class="keyword">if</span>(root == nullptr) <span class="keyword">return</span> ; <span class="comment">//收敛边界</span>
+
+          <span class="keyword">if</span>(root-&gt;left == nullptr &amp;&amp; root-&gt;right == nullptr ) <span class="keyword">return</span> root-&gt;val; <span class="comment">// 收敛边界</span>
+
+          <span class="keyword">return</span> root-&gt;val + reserve(root-&gt;left) + reserve(root-&gt;right); <span class="comment">//递归公式 </span>
+  }
+</code></pre></li>
+</ul>
+<pre><code>例子：    二叉树的遍历，DFS
+</code></pre><ul>
+<li><p><strong>分治</strong>  </p>
+<p>  原理：将大的目标分解成小的目标，逐个击破，然后归并。 </p>
+<p>  适用情况：目标可以分解成子目标，子目标解决起来比较方便。而且有可能每个小目标不是没有关联的，会被重复利用。当遇到问题较为大型或复杂的时候要要考虑分而治之的方法。</p>
+<p>  实现框架：通常由递归进行实现。</p>
+<blockquote>
+<p>在递归的基础上，把数据域缩小。</p>
+</blockquote>
+<p>  伪代码：</p>
+<pre><code>  <span class="keyword">void</span> merge_sort(<span class="keyword">int</span> *<span class="built_in">list</span>, <span class="keyword">int</span> list_size){
+      <span class="keyword">if</span>(list_size&gt;<span class="number">1</span>){ <span class="comment">// 收敛条件</span>
+          <span class="comment">//分</span>
+          <span class="keyword">int</span> *list1 = <span class="built_in">list</span>;
+          <span class="keyword">int</span> list1_size = list_size / <span class="number">2</span>;
+          <span class="keyword">int</span> *list2 = <span class="built_in">list</span> + list_size/<span class="number">2</span>;
+          <span class="keyword">int</span> list2_size = list_size - list_size;
+
+          merge_sort(list1,list_size1);
+          merge_sort(list2,list_size2);
+
+          <span class="comment">//归并</span>
+          merge_array(list1,list_size1,list2,list_size2);
+      }
+  }
+</code></pre><p>  例子：归并排序，数的拆分 11 = 3 + 3 + 3 + 2。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>回溯</strong></p>
+<p>  原理：  若当前情况不合适时，回退到过去的某一个状态，进行另一种尝试。</p>
+<p>  适用情况：暴力搜寻法，当得知当前情况不能得到的结果的时候，后退（几步），然后进行重新选择，一般与递归合用。</p>
+<p>  实现框架：</p>
+<blockquote>
+<p>每次递归结束，恢复为之前的状态。</p>
+</blockquote>
+<pre><code>  int a[n];
+  <span class="keyword">try</span>(int i){
+      <span class="keyword">if</span>(i&gt;n)
+          输出结果
+      <span class="keyword">else</span>{
+          <span class="keyword">for</span>(int j= 下界；j &lt;= 上界; ++j){
+              <span class="keyword">if</span>(fun(j)) // 满足限界函数和约束条件
+              {
+                  a[i] = j;
+                  <span class="keyword">...</span> // 其他操作
+                  <span class="keyword">try</span>(i+<span class="number">1</span>);
+                  <span class="keyword">...</span> // 清理，回溯工作
+              }
+          }
+      }
+  }
+</code></pre><p>  例子：n皇后问题</p>
+</li>
+</ul>
+<ul>
+<li><strong>贪心</strong></li>
+</ul>
+<pre><code>原理：  在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，它所作的尽是某种意义上的局部最优解。
+
+适用情况：局部最优解能决定全局最优解，全局问题由子问题做出抉择，不能回退结果（动态规划可以），一般得到的不是最优解。
+
+实现框架：
+&gt;从问题的某一初始解出发
+
+    <span class="keyword">while</span>(能朝目标前进一步){
+        利用可行的决策，求出可行解的一个元素；
+    }
+    由所有解元素组合成问题的一个可行解;
+
+例子：背包问题
+</code></pre><ul>
+<li><strong>动态规划</strong></li>
+</ul>
+<pre><code>原理：全局解由局部最优解组成，每次的子问题都构造就进行一次决策。
+
+适用情况：一种自顶向下的算法，每一步都在决策都跟之前的结果相关（递归公式），根据之前的结果，能回退。
+
+实现框架：
+
+    <span class="number">1.</span>构造辅助空间
+
+    <span class="number">2.</span>初始化边界条件
+
+    <span class="number">3.</span>递归公式
+
+伪代码：    
+
+    <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>; <span class="built_in">j</span> &lt;= m ; ++<span class="built_in">j</span>)
+        xn<span class="matrix">[j]</span> = 初始值;
+
+    <span class="keyword">for</span>(<span class="built_in">i</span> = n-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">1</span>;<span class="built_in">i</span> = <span class="built_in">i</span>-<span class="number">1</span>)
+        <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>;<span class="built_in">j</span>&gt;=f(<span class="built_in">i</span>);<span class="built_in">j</span> = <span class="built_in">j</span>+<span class="number">1</span>)
+            x<span class="matrix">[i]</span><span class="matrix">[j]</span> = max()<span class="cell">{ 递推公式 };   
+
+    result = x[<span class="number">1</span>][<span class="number">1</span>]
+
+例子：<span class="number">01</span>背包问题</span>
+</code></pre><p><strong>优化：</strong></p>
+<ul>
+<li><p><strong>空间换时间</strong>  </p>
+<p>  hastable</p>
+</li>
+</ul>
+<p>递归变种：</p>
+<ul>
+<li><strong>深度搜索DFS</strong></li>
+</ul>
+<pre><code>原理：一层一层地往下寻找，到底之后，换另一个支路继续挖。
+
+适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。
+
+实现框架：
+    递归版，如上面的递归算法。
+
+    非递归:
+
+    通过栈来存储分支未访问节点
+
+
+例子：图类的应用
+</code></pre><ul>
+<li><p><strong>广度搜索BFS</strong></p>
+<p>  原理：先遍历当前层所有节点，再遍历下一层</p>
+<p>  适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。（同上），区别在于不知目标深度的时候，会陷入无穷分支。</p>
+<p>  实现框架：</p>
+<pre><code>  递归版，如上面的递归算法。
+
+  非递归:
+
+  1.定义两个队列q1、q2
+
+  2.把根结点放在q1
+
+  3.当前节点的子结点放在q1，直到q1为空
+
+  4.q2与q1交换，重复3，直到q1、q2均为空
+</code></pre></li>
+</ul>
+<pre><code>例子：图类的应用
+</code></pre><h2 id="数据结构">数据结构</h2>
+<p>砍不同的树，选择不同的刀子，会有不同的效果。而<strong>数据结构</strong>就是我们的刀子，通过它们的特性，可以帮我们更好地解决问题。</p>
+<p>基本数据结构有：</p>
+<ul>
+<li><p>数组</p>
+<pre><code>  巧用：利用数组的下标，可以使信息量不大的二维数组转换为一维。  
+</code></pre></li>
+<li><p>链表</p>
+<pre><code>  巧用：链表的强大主要在于指针上，通过改变指针的指向，可以像魔术师一样改变链表的结构。
+</code></pre></li>
+<li><p>二叉树</p>
+<pre><code>  巧用：跟链表相像，可以改变叶结点的指针，从而改变整棵树的结构。
+</code></pre></li>
+<li><p>栈</p>
+<pre><code>  特性：后进先出。
+</code></pre></li>
+<li><p>堆</p>
+<pre><code>  常用：最大堆或最小堆的构造。
+</code></pre><p>  数组和链表是很相似的数据结构，区别在于：</p>
+<pre><code>  <span class="keyword">*</span><span class="keyword">*</span>空间<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：需要预分配，耗空间  
+  链表：按需分配 
+
+  <span class="keyword">*</span><span class="keyword">*</span>访问效率<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：支持随机访问  
+  链表：不支持
+</code></pre></li>
+</ul>
+<p>高级数据结构：</p>
+<ul>
+<li>哈希表</li>
+<li>树（红黑树，Trie树，后缀树，红黑树，B树，R树）</li>
+<li>图</li>
+</ul>
+<h2 id="常见时间复杂度的算法">常见时间复杂度的算法</h2>
+<p>但即使计算机运算能力再强大，也不应该这样白白浪费这么优秀的资源。接下来，我们要从性能的角度去分析算法。这时候，需要引入一个标准以判断哪些算法性能更优，我们引入时间复杂度和空间复杂度，用<strong>O(A)</strong>表示，A表示为算法。</p>
+<p>常用算法的时间复杂度：</p>
+<ul>
+<li><p>O(1)    </p>
+<p>  基本运算 + - * / % 寻址</p>
+<p>  hash表的期望复杂度</p>
+</li>
+<li><p>O(logn)</p>
+<p>  二分查找</p>
+</li>
+<li><p>O(<code>n^(1/2</code>))</p>
+<p>  枚举公约数</p>
+</li>
+<li><p>O(nlogn)  </p>
+<p>  归并排序    </p>
+<p>  快速排序期望复杂度</p>
+<p>  基于比较排序的算法下界</p>
+</li>
+<li><p>O(<code>n^2</code>)</p>
+<p>  集合里枚举所有二元组</p>
+</li>
+<li><p>O(<code>n^3</code>) </p>
+<p>  集合里枚举所有三元组</p>
+</li>
+<li><p>O(<code>2^n</code>)</p>
+<p>  枚举全部子集</p>
+</li>
+<li><p>O(n!)</p>
+<p>  枚举全部排列</p>
+</li>
+<li><p>O(<code>n^n</code>)</p>
+<p>  枚举n维数组的全部元素</p>
+</li>
+</ul>
+<p>以上时间复杂度按照从小到大排列</p>
+<p>O(n)能做的事太多，另开一个章节讨论。</p>
+<h2 id="算法&amp;数据结构学习资源">算法&amp;数据结构学习资源</h2>
+<p>《算法导论》、《编程之美》、《剑指offer》、<a href="http://blog.csdn.net/v_JULY_v" target="_blank" rel="external">july博客</a>、leetcode 题库</p>
+<hr>
+<p>参考：</p>
+<p><a href="http://weibo.com/julyweibo" target="_blank" rel="external">july</a>的面试算法讲座ppt</p>
+<p>leetcode 题库</p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/alogrithm/">alogrithm</a><a href="/tags/structure/">structure</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/base/">base</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2014/10/27/alogrithm-structure/" data-title="算法与数据结构 | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/10/27/Effective-Java/" title="Effective Java">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  Effective Java</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/10/27/SQL/"  title="SQL浅尝">
+ <strong>NEXT:</strong><br/> 
+ <span>SQL浅尝
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法与数据结构"><span class="toc-number">1.</span> <span class="toc-text">算法与数据结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#算法"><span class="toc-number">1.1.</span> <span class="toc-text">算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#数据结构"><span class="toc-number">1.2.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常见时间复杂度的算法"><span class="toc-number">1.3.</span> <span class="toc-text">常见时间复杂度的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法&数据结构学习资源"><span class="toc-number">1.4.</span> <span class="toc-text">算法&数据结构学习资源</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/1/" title="1">1<sup>0</sup></a></li>
+		
+			<li><a href="/categories/Android/" title="Android">Android<sup>2</sup></a></li>
+		
+			<li><a href="/categories/Doc/" title="Doc">Doc<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+		
+			<li><a href="/categories/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+		
+			<li><a href="/categories/base/" title="base">base<sup>1</sup></a></li>
+		
+			<li><a href="/categories/开发/" title="开发">开发<sup>2</sup></a></li>
+		
+			<li><a href="/categories/操作系统/" title="操作系统">操作系统<sup>1</sup></a></li>
+		
+			<li><a href="/categories/能力/" title="能力">能力<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/2/" title="2">2<sup>0</sup></a></li>
+		
+			<li><a href="/tags/alogrithm/" title="alogrithm">alogrithm<sup>1</sup></a></li>
+		
+			<li><a href="/tags/structure/" title="structure">structure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/深度：/" title="深度：*">深度：*<sup>6</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/aaronplay" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://yoursite.com" target="_blank" title="aaronplay">aaronplay</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"aaronplayblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>

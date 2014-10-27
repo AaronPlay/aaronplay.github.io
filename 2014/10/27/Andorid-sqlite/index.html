@@ -1,0 +1,417 @@
+
+ <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  
+    <title>Android SQLite 用法 | AaronPlay&#39;s Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="aaronplay">
+    
+    <meta name="description" content="SQLite背景
+SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以这个特征很适合作为applciation的文件格式。（参考 about ">
+    
+    
+    
+    
+    <link rel="alternate" href="/atom.xml" title="AaronPlay&#39;s Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+
+</head>
+
+  <body>
+    <header>
+      <div>
+		
+			<div id="imglogo">
+				<a href="/"><img src="/img/logo.svg" alt="AaronPlay&#39;s Blog" title="AaronPlay&#39;s Blog"/></a>
+			</div>
+			
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/" title="AaronPlay&#39;s Blog">AaronPlay&#39;s Blog</a></h1>
+				<h2 class="blog-motto">IT 技术 思维</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					
+						<li><a href="/">Home</a></li>
+					
+						<li><a href="/archives">Archives</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:yoursite.com">
+					</form>
+					
+					</li>
+				</ul>
+			</nav>			
+</div>
+
+    </header>
+    <div id="container">
+      <div id="main" class="post" itemscope itemprop="blogPost">
+	<article itemprop="articleBody"> 
+		<header class="article-info clearfix">
+  <h1 itemprop="name">
+    
+      <a href="/2014/10/27/Andorid-sqlite/" title="Android SQLite 用法" itemprop="url">Android SQLite 用法</a>
+  </h1>
+  <p class="article-author">By
+    
+      <a href="http://yoursite.com" title="aaronplay">aaronplay</a>
+    </p>
+  <p class="article-time">
+    <time datetime="2014-10-27T10:28:07.000Z" itemprop="datePublished">10月 27 2014</time>
+    更新日期:<time datetime="2014-10-27T11:14:24.000Z" itemprop="dateModified">10月 27 2014</time>
+    
+  </p>
+</header>
+	<div class="article-content">
+		
+		
+		<div id="toc" class="toc-article">
+			<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQLite背景"><span class="toc-number">1.</span> <span class="toc-text">SQLite背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQLite用法"><span class="toc-number">2.</span> <span class="toc-text">SQLite用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。"><span class="toc-number">2.1.</span> <span class="toc-text">在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。</span></a></li></ol></li></ol>
+		</div>
+		
+		<h2 id="SQLite背景">SQLite背景</h2>
+<p>SQLite是一个内嵌SQL数据库的引擎，与当前大部分的数据库不一样，不需要额外提供服务进程进行服务。所有读写只需一个磁盘文件进行存储即可。文件格式为跨平台，无论是64bit还是32bit、大小端输入均可。所以这个特征很适合作为applciation的文件格式。（参考 <a href="http://www.sqlite.org/about.html" target="_blank" rel="external">about SQLite</a>）</p>
+<h2 id="SQLite用法">SQLite用法</h2>
+<p>为了更为方便地在Android上使用，我们们把方法卸载onCreate里。code source(<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a>)</p>
+<pre><code>    <span class="annotation">@Override</span>
+<span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">onCreate</span>(Bundle savedInstanceState) {
+    <span class="keyword">super</span>.onCreate(savedInstanceState);
+
+    <span class="comment">//打开或创建test.db数据库</span>
+    SQLiteDatabase db = openOrCreateDatabase(<span class="string">"test.db"</span>, Context.MODE_PRIVATE, <span class="keyword">null</span>);
+    db.execSQL(<span class="string">"DROP TABLE IF EXISTS person"</span>);
+    <span class="comment">//创建person表</span>
+    db.execSQL(<span class="string">"CREATE TABLE person (_id INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR, age SMALLINT)"</span>);
+    Person person = <span class="keyword">new</span> Person();
+    person.name = <span class="string">"john"</span>;
+    person.age = <span class="number">30</span>;
+    <span class="comment">//插入数据</span>
+    db.execSQL(<span class="string">"INSERT INTO person VALUES (NULL, ?, ?)"</span>, <span class="keyword">new</span> Object[]{person.name, person.age});
+
+    person.name = <span class="string">"david"</span>;
+    person.age = <span class="number">33</span>;
+    <span class="comment">//ContentValues以键值对的形式存放数据</span>
+    ContentValues cv = <span class="keyword">new</span> ContentValues();
+    cv.put(<span class="string">"name"</span>, person.name);
+    cv.put(<span class="string">"age"</span>, person.age);
+    <span class="comment">//插入ContentValues中的数据</span>
+    db.insert(<span class="string">"person"</span>, <span class="keyword">null</span>, cv);
+
+    cv = <span class="keyword">new</span> ContentValues();
+    cv.put(<span class="string">"age"</span>, <span class="number">35</span>);
+    <span class="comment">//更新数据</span>
+    db.update(<span class="string">"person"</span>, cv, <span class="string">"name = ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"john"</span>});
+
+    Cursor c = db.rawQuery(<span class="string">"SELECT * FROM person WHERE age &gt;= ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"33"</span>});
+    <span class="keyword">while</span> (c.moveToNext()) {
+        <span class="keyword">int</span> _id = c.getInt(c.getColumnIndex(<span class="string">"_id"</span>));
+        String name = c.getString(c.getColumnIndex(<span class="string">"name"</span>));
+        <span class="keyword">int</span> age = c.getInt(c.getColumnIndex(<span class="string">"age"</span>));
+        Log.i(<span class="string">"db"</span>, <span class="string">"_id=&gt;"</span> + _id + <span class="string">", name=&gt;"</span> + name + <span class="string">", age=&gt;"</span> + age);
+    }
+    c.close();
+
+    <span class="comment">//删除数据</span>
+    db.delete(<span class="string">"person"</span>, <span class="string">"age &lt; ?"</span>, <span class="keyword">new</span> String[]{<span class="string">"35"</span>});
+
+    <span class="comment">//关闭当前数据库</span>
+    db.close();
+
+    <span class="comment">//删除test.db数据库</span>
+<span class="comment">//        deleteDatabase("test.db");</span>
+}
+</code></pre><p>执行完代码之后，会生成相关的数据库文件（.db）。如上文的代码会生成 /data/data/com.example.test/databases/test.db </p>
+<h3 id="在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。">在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。</h3>
+<p>DBHelper.java(数据库的生成)</p>
+<p>DBManager.java(数据库的管理)</p>
+<p><img src="img/raw/2014-10-26/DB.png" alt=""></p>
+<p>博文参考：<a href="http://blog.csdn.net/liuhe688/article/details/6715983" target="_blank" rel="external">http://blog.csdn.net/liuhe688/article/details/6715983</a></p>
+  
+	</div>
+		<footer class="article-footer clearfix">
+
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/深度：/">深度：*</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
+</div>
+
+
+
+<div class="article-share" id="share">
+
+  <div data-url="http://yoursite.com/2014/10/27/Andorid-sqlite/" data-title="Android SQLite 用法 | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
+  </div>
+
+</div>
+</footer>   	       
+	</article>
+	
+<nav class="article-nav clearfix">
+ 
+ <div class="prev" >
+ <a href="/2014/10/27/Enum-Learn/" title="enum Java 探究">
+  <strong>PREVIOUS:</strong><br/>
+  <span>
+  enum Java 探究</span>
+</a>
+</div>
+
+
+<div class="next">
+<a href="/2014/10/27/bloglist/"  title="博客搬家">
+ <strong>NEXT:</strong><br/> 
+ <span>博客搬家
+</span>
+</a>
+</div>
+
+</nav>
+
+	
+<section class="comment">
+	<div class="ds-thread"></div>
+</section>
+
+</div>  
+
+
+      <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
+
+  <div id="toc" class="toc-aside">
+  <strong class="toc-title">文章目录</strong>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#SQLite背景"><span class="toc-number">1.</span> <span class="toc-text">SQLite背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SQLite用法"><span class="toc-number">2.</span> <span class="toc-text">SQLite用法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。"><span class="toc-number">2.1.</span> <span class="toc-text">在一般的项目的开发中，我们会把相关的项目工具类封装好（MVC）。</span></a></li></ol></li></ol>
+  </div>
+
+<div id="asidepart">
+<div class="closeaside"><a class="closebutton" href="#" title="隐藏侧边栏"></a></div>
+<aside class="clearfix">
+
+  
+<div class="categorieslist">
+	<p class="asidetitle">分类</p>
+		<ul>
+		
+			<li><a href="/categories/1/" title="1">1<sup>0</sup></a></li>
+		
+			<li><a href="/categories/Android/" title="Android">Android<sup>2</sup></a></li>
+		
+			<li><a href="/categories/Doc/" title="Doc">Doc<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+		
+			<li><a href="/categories/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+		
+			<li><a href="/categories/base/" title="base">base<sup>1</sup></a></li>
+		
+			<li><a href="/categories/开发/" title="开发">开发<sup>2</sup></a></li>
+		
+			<li><a href="/categories/操作系统/" title="操作系统">操作系统<sup>1</sup></a></li>
+		
+			<li><a href="/categories/能力/" title="能力">能力<sup>1</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  
+<div class="tagslist">
+	<p class="asidetitle">标签</p>
+		<ul class="clearfix">
+		
+			<li><a href="/tags/2/" title="2">2<sup>0</sup></a></li>
+		
+			<li><a href="/tags/alogrithm/" title="alogrithm">alogrithm<sup>1</sup></a></li>
+		
+			<li><a href="/tags/structure/" title="structure">structure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/深度：/" title="深度：*">深度：*<sup>6</sup></a></li>
+		
+		</ul>
+</div>
+
+
+  <div class="rsspart">
+	<a href="/atom.xml" target="_blank" title="rss">RSS 订阅</a>
+</div>
+
+</aside>
+</div>
+    </div>
+    <footer><div id="footer" >
+	
+	<div class="line">
+		<span></span>
+		<div class="author"></div>
+	</div>
+	
+	
+	<div class="social-font clearfix">
+		
+		
+		
+		<a href="https://github.com/aaronplay" target="_blank" title="github"></a>
+		
+		
+		
+	</div>
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> © 2014 
+		
+		<a href="http://yoursite.com" target="_blank" title="aaronplay">aaronplay</a>
+		
+		</p>
+</div>
+</footer>
+    <script src="/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+      
+      $('#toc.toc-aside').css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var ai = $('.article-content>iframe'),
+      ae = $('.article-content>embed'),
+      t  = $('#toc'),
+      h  = $('article h2')
+      ah = $('article h2'),
+      ta = $('#toc.toc-aside'),
+      o  = $('.openaside'),
+      c  = $('.closeaside');
+  if(ai.length>0){
+    ai.wrap('<div class="video-container" />');
+  };
+  if(ae.length>0){
+   ae.wrap('<div class="video-container" />');
+  };
+  if(ah.length==0){
+    t.css('display','none');
+  }else{
+    c.click(function(){
+      ta.css('display', 'block').addClass('fadeIn');
+    });
+    o.click(function(){
+      ta.css('display', 'none');
+    });
+    $(window).scroll(function(){
+      ta.css("top",Math.max(140,320-$(this).scrollTop()));
+    });
+  };
+});
+</script>
+
+
+<script type="text/javascript">
+$(document).ready(function(){ 
+  var $this = $('.share'),
+      url = $this.attr('data-url'),
+      encodedUrl = encodeURIComponent(url),
+      title = $this.attr('data-title'),
+      tsina = $this.attr('data-tsina');
+  var html = [
+  '<a href="#" class="overlay" id="qrcode"></a>',
+  '<div class="qrcode clearfix"><span>扫描二维码分享到微信朋友圈</span><a class="qrclose" href="#share"></a><strong>Loading...Please wait</strong><img id="qrcode-pic" data-src="http://s.jiathis.com/qrcode.php?url=' + encodedUrl + '"/></div>',
+  '<a href="#textlogo" class="article-back-to-top" title="Top"></a>',
+  '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+  '<a href="#qrcode" class="article-share-qrcode" title="QRcode"></a>',
+  '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+  '<a href="http://service.weibo.com/share/share.php?title='+title+'&url='+encodedUrl +'&ralateUid='+ tsina +'&searchPic=true&style=number' +'" class="article-share-weibo" target="_blank" title="Weibo"></a>',
+  '<span title="Share to"></span>'
+  ].join('');
+  $this.append(html);
+  $('.article-share-qrcode').click(function(){
+    var imgSrc = $('#qrcode-pic').attr('data-src');
+    $('#qrcode-pic').attr('src', imgSrc);
+    $('#qrcode-pic').load(function(){
+        $('.qrcode strong').text(' ');
+    });
+  });
+});     
+</script>
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"aaronplayblog"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+  </body>
+</html>

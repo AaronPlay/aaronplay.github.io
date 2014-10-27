@@ -2,8 +2,63 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2014/10/27/hello-world/</loc>
-    <lastmod>2014-10-27T08:13:24.000Z</lastmod>
+    <loc>http://yoursite.com/2014/10/27/Andorid-sqlite/</loc>
+    <lastmod>2014-10-27T11:14:24.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/SQL/</loc>
+    <lastmod>2014-10-27T10:32:05.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/bloglist/</loc>
+    <lastmod>2014-10-27T10:32:00.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/build-blog/</loc>
+    <lastmod>2014-10-27T10:31:52.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/alogrithm-structure/</loc>
+    <lastmod>2014-10-27T10:31:41.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/Effective-Java/</loc>
+    <lastmod>2014-10-27T10:31:36.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/Interview/</loc>
+    <lastmod>2014-10-27T10:31:30.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/Enum-Learn/</loc>
+    <lastmod>2014-10-27T10:31:25.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/operation-system/</loc>
+    <lastmod>2014-10-27T10:31:18.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/skills-strength/</loc>
+    <lastmod>2014-10-27T10:31:07.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/Collection/</loc>
+    <lastmod>2014-10-27T10:30:58.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/ADB/</loc>
+    <lastmod>2014-10-27T10:29:52.000Z</lastmod>
   </url>
   
 </urlset>

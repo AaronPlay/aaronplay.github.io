@@ -4,12 +4,17 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>Hello World | AaronPlay&#39;s Blog</title>
+    <title>集合浅尝 | AaronPlay&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="aaronplay">
     
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in ">
+    <meta name="description" content="链表底层
+链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。
+Iterator&amp;lt;E&amp;gt;    itr = c.iterator();
+c.next;
+
+所以要注意，在初始化之后，不能直接remove 需要先next后在rem">
     
     
     
@@ -68,15 +73,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/10/27/hello-world/" title="Hello World" itemprop="url">Hello World</a>
+      <a href="/2014/10/27/Collection/" title="集合浅尝" itemprop="url">集合浅尝</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="aaronplay">aaronplay</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-27T05:10:04.000Z" itemprop="datePublished">10月 27 2014</time>
-    更新日期:<time datetime="2014-10-27T08:13:24.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2014-10-27T10:28:07.000Z" itemprop="datePublished">10月 27 2014</time>
+    更新日期:<time datetime="2014-10-27T10:30:58.000Z" itemprop="dateModified">10月 27 2014</time>
     
   </p>
 </header>
@@ -85,53 +90,55 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表底层"><span class="toc-number">1.</span> <span class="toc-text">链表底层</span></a></li></ol>
 		</div>
 		
-		<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">trobuleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2>
-<h3 id="Create_a_new_post">Create a new post</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+		<h3 id="链表底层">链表底层</h3>
+<p>链表寻找下一个元素一般是通过使用next方法。而这个方法的具体实现是，先跳到（指向）下一个数组，然后返回上一个元素。</p>
+<pre><code><span class="type">Iterator</span>&lt;E&gt;    itr = c.<span class="keyword">iterator</span>();
+c.next;
+</code></pre><p><img src="https://aaronplay.github.io/raw/2014-10-26/iterator.png" alt=""></p>
+<p>所以要注意，在初始化之后，不能直接remove 需要先next后在remove</p>
+<p><strong>对比</strong>C++:由于是通过数组储存，寻找目标可以直接通过索引(i++)访问。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/2/">2</a>
+  <span></span> <a href="/tags/深度：/">深度：*</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/1/">1</a>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/10/27/hello-world/" data-title="Hello World | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/10/27/Collection/" data-title="集合浅尝 | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
   </div>
 
 </div>
 </footer>   	       
 	</article>
 	
+<nav class="article-nav clearfix">
+ 
+
+<div class="next">
+<a href="/2014/10/27/ADB/"  title="ADB浅尝">
+ <strong>NEXT:</strong><br/> 
+ <span>ADB浅尝
+</span>
+</a>
+</div>
+
+</nav>
+
 	
 <section class="comment">
 	<div class="ds-thread"></div>
@@ -144,7 +151,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick_Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create_a_new_post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run_server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate_static_files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy_to_remote_sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#链表底层"><span class="toc-number">1.</span> <span class="toc-text">链表底层</span></a></li></ol>
   </div>
 
 <div id="asidepart">
@@ -156,7 +163,23 @@
 	<p class="asidetitle">分类</p>
 		<ul>
 		
-			<li><a href="/categories/1/" title="1">1<sup>1</sup></a></li>
+			<li><a href="/categories/1/" title="1">1<sup>0</sup></a></li>
+		
+			<li><a href="/categories/Android/" title="Android">Android<sup>2</sup></a></li>
+		
+			<li><a href="/categories/Doc/" title="Doc">Doc<sup>1</sup></a></li>
+		
+			<li><a href="/categories/Java/" title="Java">Java<sup>2</sup></a></li>
+		
+			<li><a href="/categories/SQL/" title="SQL">SQL<sup>1</sup></a></li>
+		
+			<li><a href="/categories/base/" title="base">base<sup>1</sup></a></li>
+		
+			<li><a href="/categories/开发/" title="开发">开发<sup>2</sup></a></li>
+		
+			<li><a href="/categories/操作系统/" title="操作系统">操作系统<sup>1</sup></a></li>
+		
+			<li><a href="/categories/能力/" title="能力">能力<sup>1</sup></a></li>
 		
 		</ul>
 </div>
@@ -167,7 +190,13 @@
 	<p class="asidetitle">标签</p>
 		<ul class="clearfix">
 		
-			<li><a href="/tags/2/" title="2">2<sup>1</sup></a></li>
+			<li><a href="/tags/2/" title="2">2<sup>0</sup></a></li>
+		
+			<li><a href="/tags/alogrithm/" title="alogrithm">alogrithm<sup>1</sup></a></li>
+		
+			<li><a href="/tags/structure/" title="structure">structure<sup>1</sup></a></li>
+		
+			<li><a href="/tags/深度：/" title="深度：*">深度：*<sup>6</sup></a></li>
 		
 		</ul>
 </div>
@@ -192,7 +221,7 @@
 		
 		
 		
-		<a href="https://github.com/https://github.com/aaronplay" target="_blank" title="github"></a>
+		<a href="https://github.com/aaronplay" target="_blank" title="github"></a>
 		
 		
 		
