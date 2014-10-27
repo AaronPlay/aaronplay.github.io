@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2014/10/27/hexo-build-blog/</loc>
+    <lastmod>2014-10-27T13:25:43.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2014/10/27/hexo-build-blog/</loc>
+    <lastmod>2014-10-27T12:36:02.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2014/10/27/alogrithm-structure/</loc>
     <lastmod>2014-10-27T11:21:03.000Z</lastmod>
   </url>
