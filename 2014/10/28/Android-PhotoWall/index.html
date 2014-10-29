@@ -4,22 +4,18 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>多线程探究 | AaronPlay&#39;s Blog</title>
+    <title>Android PhotoWall | AaronPlay&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="aaronplay">
     
-    <meta name="description" content="背景：一个进程可以存在多个线程，线程可使用进程中的资源（内存栈），线程的里的资源独有，线程间可进行通信。
-线程状态：
-
-派生
-阻塞
-解除阻塞
-结束
-
-一个进程里面存在多个线程，这个时候会将会出现几个问题：
-1.同步问题
-两个或以上的线程对同一个资源进行操作的时候，如读写操作。会导致数据的异常情况的出">
+    <meta name="description" content="图片墙——通过网络加载
+UI
+图片墙常用的就是通过一个GridView+Adapter来定制的内部格式。
+&amp;lt;GridView&amp;gt;
+    //RelativeLayout是通过Adapter的getView来获得
+    &amp;lt;RelativeLayout&amp;gt;
+    &amp;lt;/Re">
     
     
     
@@ -78,15 +74,15 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/10/27/operation-system/" title="多线程探究" itemprop="url">多线程探究</a>
+      <a href="/2014/10/28/Android-PhotoWall/" title="Android PhotoWall" itemprop="url">Android PhotoWall</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="aaronplay">aaronplay</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-27T10:28:07.000Z" itemprop="datePublished">10月 27 2014</time>
-    更新日期:<time datetime="2014-10-27T10:31:18.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2014-10-28T15:29:38.000Z" itemprop="datePublished">10月 28 2014</time>
+    更新日期:<time datetime="2014-10-29T02:27:41.000Z" itemprop="dateModified">10月 29 2014</time>
     
   </p>
 </header>
@@ -95,53 +91,68 @@
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#线程状态："><span class="toc-number">1.</span> <span class="toc-text">线程状态：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个进程里面存在多个线程，这个时候会将会出现几个问题："><span class="toc-number"></span> <span class="toc-text">一个进程里面存在多个线程，这个时候会将会出现几个问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间通信"><span class="toc-number"></span> <span class="toc-text">线程间通信</span></a>
+		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图片墙——通过网络加载"><span class="toc-number">1.</span> <span class="toc-text">图片墙——通过网络加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UI"><span class="toc-number">1.1.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adapter"><span class="toc-number">1.2.</span> <span class="toc-text">Adapter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现网络加载："><span class="toc-number">1.3.</span> <span class="toc-text">实现网络加载：</span></a></li></ol></li></ol>
 		</div>
 		
-		<p>背景：一个进程可以存在多个线程，线程可使用进程中的资源（内存栈），线程的里的资源独有，线程间可进行通信。</p>
-<h5 id="线程状态：">线程状态：</h5>
-<ol>
-<li>派生</li>
-<li>阻塞</li>
-<li>解除阻塞</li>
-<li>结束</li>
-</ol>
-<h3 id="一个进程里面存在多个线程，这个时候会将会出现几个问题：">一个进程里面存在多个线程，这个时候会将会出现几个问题：</h3>
-<p>1.<strong>同步问题</strong></p>
-<p>两个或以上的线程对同一个资源进行操作的时候，如读写操作。会导致数据的异常情况的出现（如，读发生在写之前）。</p>
-<p>解决办法：使用锁</p>
-<p>2.<strong>资源分配问题</strong></p>
-<p>每个线程的完成，需要依赖于一定的资源，而在进程里面，对于单个线程来说，资源是足够的，但是多个线程的就不一定了，当各个线程同时持有的资源又不再获得新的资源，会导致<strong>死锁</strong>的发生。</p>
-<p>解决办法：死锁的预防、检测、恢复。</p>
-<h3 id="线程间通信">线程间通信</h3>
-<p>用于：流水线式模块并发处理，资源之间有依赖关系（生产者——消费者）…</p>
-<ol>
-<li>管道</li>
-<li>信号量</li>
-<li>信号</li>
-<li>共享内存</li>
-<li>消息（Message）</li>
-</ol>
+		<h2 id="图片墙——通过网络加载">图片墙——通过网络加载</h2>
+<h3 id="UI">UI</h3>
+<p>图片墙常用的就是通过一个<code>GridView</code>+<code>Adapter</code>来定制的内部格式。</p>
+<pre><code><span class="tag">&lt;<span class="title">GridView</span>&gt;</span>
+    //RelativeLayout是通过Adapter的getView来获得
+    <span class="tag">&lt;<span class="title">RelativeLayout</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">RelativeLayout</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">GridView</span>&gt;</span>
+</code></pre><h3 id="Adapter">Adapter</h3>
+<p>基本用法：</p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">photoWallAdapter</span> <span class="keyword">extends</span> <span class="title">ArrayAdapter</span>&lt;<span class="title">String</span>&gt; <span class="keyword">implements</span> <span class="title">OnScrollListener</span></span>{
+
+<span class="keyword">public</span> <span class="title">photoWallAdapter</span>(){
+    ...
+}
+
+<span class="keyword">public</span> <span class="title">getView</span>(){
+    ...
+}
+
+}
+</code></pre><h3 id="实现网络加载："><strong>实现网络加载：</strong></h3>
+<p>1.异步下载</p>
+<ul>
+<li>使用<code>AsyncTask</code>下载</li>
+<li>通过<code>Set</code>管理线程词</li>
+</ul>
+<p>2.分布加载</p>
+<ul>
+<li>通过 <code>onScroll</code> 加载当前页面的 position</li>
+<li>根据<code>onScrollStateChanged</code>的状态来决定是否加载， 但静止状态时启动线程进行下载；当运动时取消所有线程下载。 </li>
+</ul>
+<p>3.缓存</p>
+<ul>
+<li>通过LruCache来存储图片。</li>
+</ul>
+<hr>
+<p>感谢：郭神</p>
+<p>参考：<a href="http://blog.csdn.net/guolin_blog/article/details/9526203" target="_blank" rel="external">http://blog.csdn.net/guolin_blog/article/details/9526203</a></p>
   
 	</div>
 		<footer class="article-footer clearfix">
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/深度：/">深度：*</a>
+  <span></span> <a href="/tags/深度：1/">深度：1</a>
   </div>
 
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/操作系统/">操作系统</a>
+  <a class="article-category-link" href="/categories/Android/">Android</a>
 </div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/10/27/operation-system/" data-title="多线程探究 | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/10/28/Android-PhotoWall/" data-title="Android PhotoWall | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
   </div>
 
 </div>
@@ -150,19 +161,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/10/27/skills-strength/" title="IT能力表">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  IT能力表</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/10/27/build-blog/"  title="blog upload">
+<a href="/2014/10/28/hexoblog/"  title="jekyll to hexo">
  <strong>NEXT:</strong><br/> 
- <span>blog upload
+ <span>jekyll to hexo
 </span>
 </a>
 </div>
@@ -181,7 +184,7 @@
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#线程状态："><span class="toc-number">1.</span> <span class="toc-text">线程状态：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一个进程里面存在多个线程，这个时候会将会出现几个问题："><span class="toc-number"></span> <span class="toc-text">一个进程里面存在多个线程，这个时候会将会出现几个问题：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程间通信"><span class="toc-number"></span> <span class="toc-text">线程间通信</span></a>
+  <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#图片墙——通过网络加载"><span class="toc-number">1.</span> <span class="toc-text">图片墙——通过网络加载</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#UI"><span class="toc-number">1.1.</span> <span class="toc-text">UI</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Adapter"><span class="toc-number">1.2.</span> <span class="toc-text">Adapter</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现网络加载："><span class="toc-number">1.3.</span> <span class="toc-text">实现网络加载：</span></a></li></ol></li></ol>
   </div>
 
 <div id="asidepart">

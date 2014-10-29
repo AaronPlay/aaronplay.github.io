@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title><![CDATA[AaronPlay's Blog]]></title>
-  <subtitle><![CDATA[IT 技术 思维]]></subtitle>
+  <subtitle><![CDATA[想看清这个世界]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-10-28T05:34:29.412Z</updated>
+  <updated>2014-10-29T03:40:04.181Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -13,6 +13,65 @@
   </author>
   
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Android PhotoWall]]></title>
+    <link href="http://yoursite.com/2014/10/28/Android-PhotoWall/"/>
+    <id>http://yoursite.com/2014/10/28/Android-PhotoWall/</id>
+    <published>2014-10-28T15:29:38.000Z</published>
+    <updated>2014-10-29T02:27:41.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="图片墙——通过网络加载">图片墙——通过网络加载</h2>
+<h3 id="UI">UI</h3>
+<p>图片墙常用的就是通过一个<code>GridView</code>+<code>Adapter</code>来定制的内部格式。</p>
+<pre><code><span class="tag">&lt;<span class="title">GridView</span>&gt;</span>
+    //RelativeLayout是通过Adapter的getView来获得
+    <span class="tag">&lt;<span class="title">RelativeLayout</span>&gt;</span>
+    <span class="tag">&lt;/<span class="title">RelativeLayout</span>&gt;</span>
+<span class="tag">&lt;/<span class="title">GridView</span>&gt;</span>
+</code></pre><h3 id="Adapter">Adapter</h3>
+<p>基本用法：</p>
+<pre><code><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">photoWallAdapter</span> <span class="keyword">extends</span> <span class="title">ArrayAdapter</span>&lt;<span class="title">String</span>&gt; <span class="keyword">implements</span> <span class="title">OnScrollListener</span></span>{
+
+<span class="keyword">public</span> <span class="title">photoWallAdapter</span>(){
+    ...
+}
+
+<span class="keyword">public</span> <span class="title">getView</span>(){
+    ...
+}
+
+}
+</code></pre><h3 id="实现网络加载："><strong>实现网络加载：</strong></h3>
+<p>1.异步下载</p>
+<ul>
+<li>使用<code>AsyncTask</code>下载</li>
+<li>通过<code>Set</code>管理线程词</li>
+</ul>
+<p>2.分布加载</p>
+<ul>
+<li>通过 <code>onScroll</code> 加载当前页面的 position</li>
+<li>根据<code>onScrollStateChanged</code>的状态来决定是否加载， 但静止状态时启动线程进行下载；当运动时取消所有线程下载。 </li>
+</ul>
+<p>3.缓存</p>
+<ul>
+<li>通过LruCache来存储图片。</li>
+</ul>
+<hr>
+<p>感谢：郭神</p>
+<p>参考：<a href="http://blog.csdn.net/guolin_blog/article/details/9526203" target="_blank" rel="external">http://blog.csdn.net/guolin_blog/article/details/9526203</a></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="图片墙——通过网络加载">图片墙——通过网络加载</h2>
+<h3 id="UI">UI</h3>
+<p>图片墙常用的就是通过一个<code>GridView</code>+<code>Adapter</code>来定制的内部格式。</p>
+<pre><code>]]>
+    </summary>
+    
+      <category term="深度：1" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A1/"/>
+    
+      <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[jekyll to hexo]]></title>
@@ -70,6 +129,46 @@
   </entry>
   
   <entry>
+    <title><![CDATA[IT能力表]]></title>
+    <link href="http://yoursite.com/2014/10/27/skills-strength/"/>
+    <id>http://yoursite.com/2014/10/27/skills-strength/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T10:31:07.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="能力">能力</h2>
+<h3 id="编程">编程</h3>
+<ul>
+<li>Java：<em>**</em>（4）</li>
+<li>Android：<em>**</em>（4）</li>
+<li>JSP: **(2)</li>
+<li>HTML+CSS:*(1) </li>
+<li>C/C++ ：**（2）</li>
+<li>算法&amp;数据结构：**（2）</li>
+<li>DataBase：**（2）</li>
+<li>Linux: *(1)</li>
+</ul>
+<h3 id="原理">原理</h3>
+<ul>
+<li>操作系统：**（2）</li>
+<li>Android内核：<em>*</em>（3）</li>
+<li>数据库：**（2）</li>
+<li>计算机网络：**（2） </li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="能力">能力</h2>
+<h3 id="编程">编程</h3>
+<ul>
+<li>Java：<em>**</em>（4）</li>
+<li>Android：<em>**</em>（4）</li>
+<li>JSP: **(2)</li>
+<li>HTML+CSS:*]]>
+    </summary>
+    
+      <category term="能力" scheme="http://yoursite.com/categories/%E8%83%BD%E5%8A%9B/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[多线程探究]]></title>
     <link href="http://yoursite.com/2014/10/27/operation-system/"/>
     <id>http://yoursite.com/2014/10/27/operation-system/</id>
@@ -117,46 +216,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[IT能力表]]></title>
-    <link href="http://yoursite.com/2014/10/27/skills-strength/"/>
-    <id>http://yoursite.com/2014/10/27/skills-strength/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:31:07.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="能力">能力</h2>
-<h3 id="编程">编程</h3>
-<ul>
-<li>Java：<em>**</em>（4）</li>
-<li>Android：<em>**</em>（4）</li>
-<li>JSP: **(2)</li>
-<li>HTML+CSS:*(1) </li>
-<li>C/C++ ：**（2）</li>
-<li>算法&amp;数据结构：**（2）</li>
-<li>DataBase：**（2）</li>
-<li>Linux: *(1)</li>
-</ul>
-<h3 id="原理">原理</h3>
-<ul>
-<li>操作系统：**（2）</li>
-<li>Android内核：<em>*</em>（3）</li>
-<li>数据库：**（2）</li>
-<li>计算机网络：**（2） </li>
-</ul>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="能力">能力</h2>
-<h3 id="编程">编程</h3>
-<ul>
-<li>Java：<em>**</em>（4）</li>
-<li>Android：<em>**</em>（4）</li>
-<li>JSP: **(2)</li>
-<li>HTML+CSS:*]]>
-    </summary>
-    
-      <category term="能力" scheme="http://yoursite.com/categories/%E8%83%BD%E5%8A%9B/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[blog upload]]></title>
     <link href="http://yoursite.com/2014/10/27/build-blog/"/>
     <id>http://yoursite.com/2014/10/27/build-blog/</id>
@@ -185,292 +244,6 @@
     </summary>
     
       <category term="Doc" scheme="http://yoursite.com/categories/Doc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title><![CDATA[算法与数据结构]]></title>
-    <link href="http://yoursite.com/2014/10/27/alogrithm-structure/"/>
-    <id>http://yoursite.com/2014/10/27/alogrithm-structure/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T11:21:03.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
-<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
-<blockquote>
-<p><strong>本文目的：打造一个算法模板，把适用情况总结出来，以便快速定位，套用。</strong></p>
-</blockquote>
-<h2 id="算法">算法</h2>
-<blockquote>
-<p>思考：在解决问题的时候，我们都希望直接能达到最好的效果，但人的思考是从简单开始，再到复杂，之后慢慢优化，所以不存在最优的效果，只有在目前所在的状况达到最优的答案，以后会有更好的算法。</p>
-</blockquote>
-<p>基于计算机运算的操作，不外乎就是对数据的增删查改，而这个操作的前提是找到需要目标。</p>
-<p><strong>注意好细节上处理，边界问题等，可以通过简单的举例来测试</strong></p>
-<ul>
-<li><p><strong>暴力法（枚举）</strong></p>
-<p>  这是我们最容易想到，就是一个个地尝试，相当万能的解法，但这种情况只适用于在计算机强大的能力下。这样的代码一般都是很短的，读起来也是最省力了。但一般不用，因为计算机可以帮助我们做得更多。</p>
-</li>
-<li><p><strong>排序</strong></p>
-<p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
-<p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
-<p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
-<p>  <img src="/img/raw/2014-10-06/sort.png" alt=""></p>
-<p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
-</li>
-<li><p><strong>查找</strong></p>
-<p>  为了更加高效地查找，我们一般在结构化的数据基础上进行查找。除非有特别的情况，否则已排序的数组的情况下，一般选用<strong>二分查找</strong>（能确保自己能正确写出来吗？）。</p>
-</li>
-</ul>
-<p><em>以上算法适用于在单个目标的查找修改，对于数据之间有关联，或者是对数据之间进行运算，可以选择更加优秀的算法来提高的性能。</em></p>
-<p>接下来，涉及到的算法按以下框架进行书写：</p>
-<blockquote>
-<p>原理：<br>适用情况：<br>实现框架：<br>例子：</p>
-</blockquote>
-<ul>
-<li><p><strong>递归</strong></p>
-<p>  原理：  根据目前的状况，等量改变参数，对自身函数进行调用。</p>
-<p>  适用情况：可以把当前问题抽象以层次为单位进行解决的，层与层之间的状态有关联。</p>
-<p>  实现框架：</p>
-<pre><code>  &gt;1.设置收敛界限
-  &gt;
-  &gt;2.递归公式
-</code></pre><p>  伪代码：</p>
-<pre><code>  <span class="keyword">int</span> reserve(TreeNode* root){
-          <span class="keyword">if</span>(root == nullptr) <span class="keyword">return</span> ; <span class="comment">//收敛边界</span>
-
-          <span class="keyword">if</span>(root-&gt;left == nullptr &amp;&amp; root-&gt;right == nullptr ) <span class="keyword">return</span> root-&gt;val; <span class="comment">// 收敛边界</span>
-
-          <span class="keyword">return</span> root-&gt;val + reserve(root-&gt;left) + reserve(root-&gt;right); <span class="comment">//递归公式 </span>
-  }
-</code></pre></li>
-</ul>
-<pre><code>例子：    二叉树的遍历，DFS
-</code></pre><ul>
-<li><p><strong>分治</strong>  </p>
-<p>  原理：将大的目标分解成小的目标，逐个击破，然后归并。 </p>
-<p>  适用情况：目标可以分解成子目标，子目标解决起来比较方便。而且有可能每个小目标不是没有关联的，会被重复利用。当遇到问题较为大型或复杂的时候要要考虑分而治之的方法。</p>
-<p>  实现框架：通常由递归进行实现。</p>
-<blockquote>
-<p>在递归的基础上，把数据域缩小。</p>
-</blockquote>
-<p>  伪代码：</p>
-<pre><code>  <span class="keyword">void</span> merge_sort(<span class="keyword">int</span> *<span class="built_in">list</span>, <span class="keyword">int</span> list_size){
-      <span class="keyword">if</span>(list_size&gt;<span class="number">1</span>){ <span class="comment">// 收敛条件</span>
-          <span class="comment">//分</span>
-          <span class="keyword">int</span> *list1 = <span class="built_in">list</span>;
-          <span class="keyword">int</span> list1_size = list_size / <span class="number">2</span>;
-          <span class="keyword">int</span> *list2 = <span class="built_in">list</span> + list_size/<span class="number">2</span>;
-          <span class="keyword">int</span> list2_size = list_size - list_size;
-
-          merge_sort(list1,list_size1);
-          merge_sort(list2,list_size2);
-
-          <span class="comment">//归并</span>
-          merge_array(list1,list_size1,list2,list_size2);
-      }
-  }
-</code></pre><p>  例子：归并排序，数的拆分 11 = 3 + 3 + 3 + 2。</p>
-</li>
-</ul>
-<ul>
-<li><p><strong>回溯</strong></p>
-<p>  原理：  若当前情况不合适时，回退到过去的某一个状态，进行另一种尝试。</p>
-<p>  适用情况：暴力搜寻法，当得知当前情况不能得到的结果的时候，后退（几步），然后进行重新选择，一般与递归合用。</p>
-<p>  实现框架：</p>
-<blockquote>
-<p>每次递归结束，恢复为之前的状态。</p>
-</blockquote>
-<pre><code>  int a[n];
-  <span class="keyword">try</span>(int i){
-      <span class="keyword">if</span>(i&gt;n)
-          输出结果
-      <span class="keyword">else</span>{
-          <span class="keyword">for</span>(int j= 下界；j &lt;= 上界; ++j){
-              <span class="keyword">if</span>(fun(j)) // 满足限界函数和约束条件
-              {
-                  a[i] = j;
-                  <span class="keyword">...</span> // 其他操作
-                  <span class="keyword">try</span>(i+<span class="number">1</span>);
-                  <span class="keyword">...</span> // 清理，回溯工作
-              }
-          }
-      }
-  }
-</code></pre><p>  例子：n皇后问题</p>
-</li>
-</ul>
-<ul>
-<li><strong>贪心</strong></li>
-</ul>
-<pre><code>原理：  在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，它所作的尽是某种意义上的局部最优解。
-
-适用情况：局部最优解能决定全局最优解，全局问题由子问题做出抉择，不能回退结果（动态规划可以），一般得到的不是最优解。
-
-实现框架：
-&gt;从问题的某一初始解出发
-
-    <span class="keyword">while</span>(能朝目标前进一步){
-        利用可行的决策，求出可行解的一个元素；
-    }
-    由所有解元素组合成问题的一个可行解;
-
-例子：背包问题
-</code></pre><ul>
-<li><strong>动态规划</strong></li>
-</ul>
-<pre><code>原理：全局解由局部最优解组成，每次的子问题都构造就进行一次决策。
-
-适用情况：一种自顶向下的算法，每一步都在决策都跟之前的结果相关（递归公式），根据之前的结果，能回退。
-
-实现框架：
-
-    <span class="number">1.</span>构造辅助空间
-
-    <span class="number">2.</span>初始化边界条件
-
-    <span class="number">3.</span>递归公式
-
-伪代码：    
-
-    <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>; <span class="built_in">j</span> &lt;= m ; ++<span class="built_in">j</span>)
-        xn<span class="matrix">[j]</span> = 初始值;
-
-    <span class="keyword">for</span>(<span class="built_in">i</span> = n-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">1</span>;<span class="built_in">i</span> = <span class="built_in">i</span>-<span class="number">1</span>)
-        <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>;<span class="built_in">j</span>&gt;=f(<span class="built_in">i</span>);<span class="built_in">j</span> = <span class="built_in">j</span>+<span class="number">1</span>)
-            x<span class="matrix">[i]</span><span class="matrix">[j]</span> = max()<span class="cell">{ 递推公式 };   
-
-    result = x[<span class="number">1</span>][<span class="number">1</span>]
-
-例子：<span class="number">01</span>背包问题</span>
-</code></pre><p><strong>优化：</strong></p>
-<ul>
-<li><p><strong>空间换时间</strong>  </p>
-<p>  hastable</p>
-</li>
-</ul>
-<p>递归变种：</p>
-<ul>
-<li><strong>深度搜索DFS</strong></li>
-</ul>
-<pre><code>原理：一层一层地往下寻找，到底之后，换另一个支路继续挖。
-
-适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。
-
-实现框架：
-    递归版，如上面的递归算法。
-
-    非递归:
-
-    通过栈来存储分支未访问节点
-
-
-例子：图类的应用
-</code></pre><ul>
-<li><p><strong>广度搜索BFS</strong></p>
-<p>  原理：先遍历当前层所有节点，再遍历下一层</p>
-<p>  适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。（同上），区别在于不知目标深度的时候，会陷入无穷分支。</p>
-<p>  实现框架：</p>
-<pre><code>  递归版，如上面的递归算法。
-
-  非递归:
-
-  1.定义两个队列q1、q2
-
-  2.把根结点放在q1
-
-  3.当前节点的子结点放在q1，直到q1为空
-
-  4.q2与q1交换，重复3，直到q1、q2均为空
-</code></pre></li>
-</ul>
-<pre><code>例子：图类的应用
-</code></pre><h2 id="数据结构">数据结构</h2>
-<p>砍不同的树，选择不同的刀子，会有不同的效果。而<strong>数据结构</strong>就是我们的刀子，通过它们的特性，可以帮我们更好地解决问题。</p>
-<p>基本数据结构有：</p>
-<ul>
-<li><p>数组</p>
-<pre><code>  巧用：利用数组的下标，可以使信息量不大的二维数组转换为一维。  
-</code></pre></li>
-<li><p>链表</p>
-<pre><code>  巧用：链表的强大主要在于指针上，通过改变指针的指向，可以像魔术师一样改变链表的结构。
-</code></pre></li>
-<li><p>二叉树</p>
-<pre><code>  巧用：跟链表相像，可以改变叶结点的指针，从而改变整棵树的结构。
-</code></pre></li>
-<li><p>栈</p>
-<pre><code>  特性：后进先出。
-</code></pre></li>
-<li><p>堆</p>
-<pre><code>  常用：最大堆或最小堆的构造。
-</code></pre><p>  数组和链表是很相似的数据结构，区别在于：</p>
-<pre><code>  <span class="keyword">*</span><span class="keyword">*</span>空间<span class="keyword">*</span><span class="keyword">*</span>  
-  数组：需要预分配，耗空间  
-  链表：按需分配 
-
-  <span class="keyword">*</span><span class="keyword">*</span>访问效率<span class="keyword">*</span><span class="keyword">*</span>  
-  数组：支持随机访问  
-  链表：不支持
-</code></pre></li>
-</ul>
-<p>高级数据结构：</p>
-<ul>
-<li>哈希表</li>
-<li>树（红黑树，Trie树，后缀树，红黑树，B树，R树）</li>
-<li>图</li>
-</ul>
-<h2 id="常见时间复杂度的算法">常见时间复杂度的算法</h2>
-<p>但即使计算机运算能力再强大，也不应该这样白白浪费这么优秀的资源。接下来，我们要从性能的角度去分析算法。这时候，需要引入一个标准以判断哪些算法性能更优，我们引入时间复杂度和空间复杂度，用<strong>O(A)</strong>表示，A表示为算法。</p>
-<p>常用算法的时间复杂度：</p>
-<ul>
-<li><p>O(1)    </p>
-<p>  基本运算 + - * / % 寻址</p>
-<p>  hash表的期望复杂度</p>
-</li>
-<li><p>O(logn)</p>
-<p>  二分查找</p>
-</li>
-<li><p>O(<code>n^(1/2</code>))</p>
-<p>  枚举公约数</p>
-</li>
-<li><p>O(nlogn)  </p>
-<p>  归并排序    </p>
-<p>  快速排序期望复杂度</p>
-<p>  基于比较排序的算法下界</p>
-</li>
-<li><p>O(<code>n^2</code>)</p>
-<p>  集合里枚举所有二元组</p>
-</li>
-<li><p>O(<code>n^3</code>) </p>
-<p>  集合里枚举所有三元组</p>
-</li>
-<li><p>O(<code>2^n</code>)</p>
-<p>  枚举全部子集</p>
-</li>
-<li><p>O(n!)</p>
-<p>  枚举全部排列</p>
-</li>
-<li><p>O(<code>n^n</code>)</p>
-<p>  枚举n维数组的全部元素</p>
-</li>
-</ul>
-<p>以上时间复杂度按照从小到大排列</p>
-<p>O(n)能做的事太多，另开一个章节讨论。</p>
-<h2 id="算法&amp;数据结构学习资源">算法&amp;数据结构学习资源</h2>
-<p>《算法导论》、《编程之美》、《剑指offer》、<a href="http://blog.csdn.net/v_JULY_v" target="_blank" rel="external">july博客</a>、leetcode 题库</p>
-<hr>
-<p>参考：</p>
-<p><a href="http://weibo.com/julyweibo" target="_blank" rel="external">july</a>的面试算法讲座ppt</p>
-<p>leetcode 题库</p>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
-<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在l]]>
-    </summary>
-    
-      <category term="alogrithm" scheme="http://yoursite.com/tags/alogrithm/"/>
-    
-      <category term="structure" scheme="http://yoursite.com/tags/structure/"/>
-    
-      <category term="base" scheme="http://yoursite.com/categories/base/"/>
     
   </entry>
   
@@ -517,6 +290,77 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
       <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[SQL浅尝]]></title>
+    <link href="http://yoursite.com/2014/10/27/SQL/"/>
+    <id>http://yoursite.com/2014/10/27/SQL/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T10:32:05.000Z</updated>
+    <content type="html"><![CDATA[<h3 id="SQL背景">SQL背景</h3>
+<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987年成为国际标准。但不同数据库会对他进行扩充，所以不同数据库间会出现一个数据库出现一套SQL语句，但是差别不大。</p>
+<h3 id="语言特点">语言特点</h3>
+<p>SQL作为一种高级的非过程化语言，允许用户在高层数据数据结构上工作。</p>
+<p>SQL同时也是数据库文件格式和扩展名。</p>
+<p>SQL包含3个部分：</p>
+<ol>
+<li>DD(define)L     （常用）</li>
+<li>DM(Manage)L   （常用）</li>
+<li>DC(Control)L  </li>
+</ol>
+<h3 id="安全问题">安全问题</h3>
+<p>许多开发人员习惯以字符串组合创建SQL指令，而且又使用<strong>系统管理员级</strong>的账号连接数据库，因此让黑客有机会利用SQL组合方式进行攻击（如，drop table;、 delete * from table;），这种攻击成为SQL注入。</p>
+<p>预防方法：<a href="http://zh.wikipedia.org/wiki/%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2" target="_blank" rel="external">参数化查询</a>（在Java中，就是利用占位符，然后进行替代）</p>
+<h3 id="常用语句">常用语句</h3>
+<p><strong>DML：</strong></p>
+<ul>
+<li><p>SELECT</p>
+<pre><code>  <span class="operator"><span class="keyword">SELECT</span> * 
+  <span class="keyword">FROM</span> 
+  <span class="keyword">WHERE</span>
+  <span class="keyword">GROUP</span>
+  <span class="keyword">BY</span>
+  <span class="keyword">ORDER</span>
+  <span class="keyword">BY</span></span>
+</code></pre></li>
+</ul>
+<ul>
+<li><p>UPDATE</p>
+</li>
+<li><p>DELETE</p>
+</li>
+<li><p>INSERT INTO    </p>
+</li>
+</ul>
+<p><strong>DDL：</strong></p>
+<ul>
+<li>CREATE DATABASE</li>
+<li>ALTER DATABASE</li>
+<li>CREATE TABLE</li>
+<li>ALTER TABLE</li>
+<li>DROP TABLE</li>
+<li>CREATE INDEX</li>
+<li>DROP INDEX</li>
+</ul>
+<h3 id="强化学习">强化学习</h3>
+<p><a href="http://www.w3school.com.cn/sql/" target="_blank" rel="external">w3cschool</a></p>
+<hr>
+<p>参考：</p>
+<ul>
+<li><a href="http://zh.wikipedia.org/wiki/SQL" target="_blank" rel="external">wiki</a></li>
+<li><a href="http://www.w3school.com.cn/sql/sql_syntax.asp" target="_blank" rel="external">w3cschool</a></li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h3 id="SQL背景">SQL背景</h3>
+<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987]]>
+    </summary>
+    
+      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
+    
+      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
     
   </entry>
   
@@ -836,73 +680,288 @@ c.next;
   </entry>
   
   <entry>
-    <title><![CDATA[SQL浅尝]]></title>
-    <link href="http://yoursite.com/2014/10/27/SQL/"/>
-    <id>http://yoursite.com/2014/10/27/SQL/</id>
+    <title><![CDATA[算法与数据结构]]></title>
+    <link href="http://yoursite.com/2014/10/27/alogrithm-structure/"/>
+    <id>http://yoursite.com/2014/10/27/alogrithm-structure/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:32:05.000Z</updated>
-    <content type="html"><![CDATA[<h3 id="SQL背景">SQL背景</h3>
-<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987年成为国际标准。但不同数据库会对他进行扩充，所以不同数据库间会出现一个数据库出现一套SQL语句，但是差别不大。</p>
-<h3 id="语言特点">语言特点</h3>
-<p>SQL作为一种高级的非过程化语言，允许用户在高层数据数据结构上工作。</p>
-<p>SQL同时也是数据库文件格式和扩展名。</p>
-<p>SQL包含3个部分：</p>
-<ol>
-<li>DD(define)L     （常用）</li>
-<li>DM(Manage)L   （常用）</li>
-<li>DC(Control)L  </li>
-</ol>
-<h3 id="安全问题">安全问题</h3>
-<p>许多开发人员习惯以字符串组合创建SQL指令，而且又使用<strong>系统管理员级</strong>的账号连接数据库，因此让黑客有机会利用SQL组合方式进行攻击（如，drop table;、 delete * from table;），这种攻击成为SQL注入。</p>
-<p>预防方法：<a href="http://zh.wikipedia.org/wiki/%E5%8F%83%E6%95%B8%E5%8C%96%E6%9F%A5%E8%A9%A2" target="_blank" rel="external">参数化查询</a>（在Java中，就是利用占位符，然后进行替代）</p>
-<h3 id="常用语句">常用语句</h3>
-<p><strong>DML：</strong></p>
+    <updated>2014-10-27T11:21:03.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
+<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
+<blockquote>
+<p><strong>本文目的：打造一个算法模板，把适用情况总结出来，以便快速定位，套用。</strong></p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<blockquote>
+<p>思考：在解决问题的时候，我们都希望直接能达到最好的效果，但人的思考是从简单开始，再到复杂，之后慢慢优化，所以不存在最优的效果，只有在目前所在的状况达到最优的答案，以后会有更好的算法。</p>
+</blockquote>
+<p>基于计算机运算的操作，不外乎就是对数据的增删查改，而这个操作的前提是找到需要目标。</p>
+<p><strong>注意好细节上处理，边界问题等，可以通过简单的举例来测试</strong></p>
 <ul>
-<li><p>SELECT</p>
-<pre><code>  <span class="operator"><span class="keyword">SELECT</span> * 
-  <span class="keyword">FROM</span> 
-  <span class="keyword">WHERE</span>
-  <span class="keyword">GROUP</span>
-  <span class="keyword">BY</span>
-  <span class="keyword">ORDER</span>
-  <span class="keyword">BY</span></span>
+<li><p><strong>暴力法（枚举）</strong></p>
+<p>  这是我们最容易想到，就是一个个地尝试，相当万能的解法，但这种情况只适用于在计算机强大的能力下。这样的代码一般都是很短的，读起来也是最省力了。但一般不用，因为计算机可以帮助我们做得更多。</p>
+</li>
+<li><p><strong>排序</strong></p>
+<p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
+<p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
+<p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
+<p>  <img src="/img/raw/2014-10-06/sort.png" alt=""></p>
+<p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
+</li>
+<li><p><strong>查找</strong></p>
+<p>  为了更加高效地查找，我们一般在结构化的数据基础上进行查找。除非有特别的情况，否则已排序的数组的情况下，一般选用<strong>二分查找</strong>（能确保自己能正确写出来吗？）。</p>
+</li>
+</ul>
+<p><em>以上算法适用于在单个目标的查找修改，对于数据之间有关联，或者是对数据之间进行运算，可以选择更加优秀的算法来提高的性能。</em></p>
+<p>接下来，涉及到的算法按以下框架进行书写：</p>
+<blockquote>
+<p>原理：<br>适用情况：<br>实现框架：<br>例子：</p>
+</blockquote>
+<ul>
+<li><p><strong>递归</strong></p>
+<p>  原理：  根据目前的状况，等量改变参数，对自身函数进行调用。</p>
+<p>  适用情况：可以把当前问题抽象以层次为单位进行解决的，层与层之间的状态有关联。</p>
+<p>  实现框架：</p>
+<pre><code>  &gt;1.设置收敛界限
+  &gt;
+  &gt;2.递归公式
+</code></pre><p>  伪代码：</p>
+<pre><code>  <span class="keyword">int</span> reserve(TreeNode* root){
+          <span class="keyword">if</span>(root == nullptr) <span class="keyword">return</span> ; <span class="comment">//收敛边界</span>
+
+          <span class="keyword">if</span>(root-&gt;left == nullptr &amp;&amp; root-&gt;right == nullptr ) <span class="keyword">return</span> root-&gt;val; <span class="comment">// 收敛边界</span>
+
+          <span class="keyword">return</span> root-&gt;val + reserve(root-&gt;left) + reserve(root-&gt;right); <span class="comment">//递归公式 </span>
+  }
 </code></pre></li>
 </ul>
-<ul>
-<li><p>UPDATE</p>
-</li>
-<li><p>DELETE</p>
-</li>
-<li><p>INSERT INTO    </p>
+<pre><code>例子：    二叉树的遍历，DFS
+</code></pre><ul>
+<li><p><strong>分治</strong>  </p>
+<p>  原理：将大的目标分解成小的目标，逐个击破，然后归并。 </p>
+<p>  适用情况：目标可以分解成子目标，子目标解决起来比较方便。而且有可能每个小目标不是没有关联的，会被重复利用。当遇到问题较为大型或复杂的时候要要考虑分而治之的方法。</p>
+<p>  实现框架：通常由递归进行实现。</p>
+<blockquote>
+<p>在递归的基础上，把数据域缩小。</p>
+</blockquote>
+<p>  伪代码：</p>
+<pre><code>  <span class="keyword">void</span> merge_sort(<span class="keyword">int</span> *<span class="built_in">list</span>, <span class="keyword">int</span> list_size){
+      <span class="keyword">if</span>(list_size&gt;<span class="number">1</span>){ <span class="comment">// 收敛条件</span>
+          <span class="comment">//分</span>
+          <span class="keyword">int</span> *list1 = <span class="built_in">list</span>;
+          <span class="keyword">int</span> list1_size = list_size / <span class="number">2</span>;
+          <span class="keyword">int</span> *list2 = <span class="built_in">list</span> + list_size/<span class="number">2</span>;
+          <span class="keyword">int</span> list2_size = list_size - list_size;
+
+          merge_sort(list1,list_size1);
+          merge_sort(list2,list_size2);
+
+          <span class="comment">//归并</span>
+          merge_array(list1,list_size1,list2,list_size2);
+      }
+  }
+</code></pre><p>  例子：归并排序，数的拆分 11 = 3 + 3 + 3 + 2。</p>
 </li>
 </ul>
-<p><strong>DDL：</strong></p>
 <ul>
-<li>CREATE DATABASE</li>
-<li>ALTER DATABASE</li>
-<li>CREATE TABLE</li>
-<li>ALTER TABLE</li>
-<li>DROP TABLE</li>
-<li>CREATE INDEX</li>
-<li>DROP INDEX</li>
+<li><p><strong>回溯</strong></p>
+<p>  原理：  若当前情况不合适时，回退到过去的某一个状态，进行另一种尝试。</p>
+<p>  适用情况：暴力搜寻法，当得知当前情况不能得到的结果的时候，后退（几步），然后进行重新选择，一般与递归合用。</p>
+<p>  实现框架：</p>
+<blockquote>
+<p>每次递归结束，恢复为之前的状态。</p>
+</blockquote>
+<pre><code>  int a[n];
+  <span class="keyword">try</span>(int i){
+      <span class="keyword">if</span>(i&gt;n)
+          输出结果
+      <span class="keyword">else</span>{
+          <span class="keyword">for</span>(int j= 下界；j &lt;= 上界; ++j){
+              <span class="keyword">if</span>(fun(j)) // 满足限界函数和约束条件
+              {
+                  a[i] = j;
+                  <span class="keyword">...</span> // 其他操作
+                  <span class="keyword">try</span>(i+<span class="number">1</span>);
+                  <span class="keyword">...</span> // 清理，回溯工作
+              }
+          }
+      }
+  }
+</code></pre><p>  例子：n皇后问题</p>
+</li>
 </ul>
-<h3 id="强化学习">强化学习</h3>
-<p><a href="http://www.w3school.com.cn/sql/" target="_blank" rel="external">w3cschool</a></p>
+<ul>
+<li><strong>贪心</strong></li>
+</ul>
+<pre><code>原理：  在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，它所作的尽是某种意义上的局部最优解。
+
+适用情况：局部最优解能决定全局最优解，全局问题由子问题做出抉择，不能回退结果（动态规划可以），一般得到的不是最优解。
+
+实现框架：
+&gt;从问题的某一初始解出发
+
+    <span class="keyword">while</span>(能朝目标前进一步){
+        利用可行的决策，求出可行解的一个元素；
+    }
+    由所有解元素组合成问题的一个可行解;
+
+例子：背包问题
+</code></pre><ul>
+<li><strong>动态规划</strong></li>
+</ul>
+<pre><code>原理：全局解由局部最优解组成，每次的子问题都构造就进行一次决策。
+
+适用情况：一种自顶向下的算法，每一步都在决策都跟之前的结果相关（递归公式），根据之前的结果，能回退。
+
+实现框架：
+
+    <span class="number">1.</span>构造辅助空间
+
+    <span class="number">2.</span>初始化边界条件
+
+    <span class="number">3.</span>递归公式
+
+伪代码：    
+
+    <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>; <span class="built_in">j</span> &lt;= m ; ++<span class="built_in">j</span>)
+        xn<span class="matrix">[j]</span> = 初始值;
+
+    <span class="keyword">for</span>(<span class="built_in">i</span> = n-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">1</span>;<span class="built_in">i</span> = <span class="built_in">i</span>-<span class="number">1</span>)
+        <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>;<span class="built_in">j</span>&gt;=f(<span class="built_in">i</span>);<span class="built_in">j</span> = <span class="built_in">j</span>+<span class="number">1</span>)
+            x<span class="matrix">[i]</span><span class="matrix">[j]</span> = max()<span class="cell">{ 递推公式 };   
+
+    result = x[<span class="number">1</span>][<span class="number">1</span>]
+
+例子：<span class="number">01</span>背包问题</span>
+</code></pre><p><strong>优化：</strong></p>
+<ul>
+<li><p><strong>空间换时间</strong>  </p>
+<p>  hastable</p>
+</li>
+</ul>
+<p>递归变种：</p>
+<ul>
+<li><strong>深度搜索DFS</strong></li>
+</ul>
+<pre><code>原理：一层一层地往下寻找，到底之后，换另一个支路继续挖。
+
+适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。
+
+实现框架：
+    递归版，如上面的递归算法。
+
+    非递归:
+
+    通过栈来存储分支未访问节点
+
+
+例子：图类的应用
+</code></pre><ul>
+<li><p><strong>广度搜索BFS</strong></p>
+<p>  原理：先遍历当前层所有节点，再遍历下一层</p>
+<p>  适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。（同上），区别在于不知目标深度的时候，会陷入无穷分支。</p>
+<p>  实现框架：</p>
+<pre><code>  递归版，如上面的递归算法。
+
+  非递归:
+
+  1.定义两个队列q1、q2
+
+  2.把根结点放在q1
+
+  3.当前节点的子结点放在q1，直到q1为空
+
+  4.q2与q1交换，重复3，直到q1、q2均为空
+</code></pre></li>
+</ul>
+<pre><code>例子：图类的应用
+</code></pre><h2 id="数据结构">数据结构</h2>
+<p>砍不同的树，选择不同的刀子，会有不同的效果。而<strong>数据结构</strong>就是我们的刀子，通过它们的特性，可以帮我们更好地解决问题。</p>
+<p>基本数据结构有：</p>
+<ul>
+<li><p>数组</p>
+<pre><code>  巧用：利用数组的下标，可以使信息量不大的二维数组转换为一维。  
+</code></pre></li>
+<li><p>链表</p>
+<pre><code>  巧用：链表的强大主要在于指针上，通过改变指针的指向，可以像魔术师一样改变链表的结构。
+</code></pre></li>
+<li><p>二叉树</p>
+<pre><code>  巧用：跟链表相像，可以改变叶结点的指针，从而改变整棵树的结构。
+</code></pre></li>
+<li><p>栈</p>
+<pre><code>  特性：后进先出。
+</code></pre></li>
+<li><p>堆</p>
+<pre><code>  常用：最大堆或最小堆的构造。
+</code></pre><p>  数组和链表是很相似的数据结构，区别在于：</p>
+<pre><code>  <span class="keyword">*</span><span class="keyword">*</span>空间<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：需要预分配，耗空间  
+  链表：按需分配 
+
+  <span class="keyword">*</span><span class="keyword">*</span>访问效率<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：支持随机访问  
+  链表：不支持
+</code></pre></li>
+</ul>
+<p>高级数据结构：</p>
+<ul>
+<li>哈希表</li>
+<li>树（红黑树，Trie树，后缀树，红黑树，B树，R树）</li>
+<li>图</li>
+</ul>
+<h2 id="常见时间复杂度的算法">常见时间复杂度的算法</h2>
+<p>但即使计算机运算能力再强大，也不应该这样白白浪费这么优秀的资源。接下来，我们要从性能的角度去分析算法。这时候，需要引入一个标准以判断哪些算法性能更优，我们引入时间复杂度和空间复杂度，用<strong>O(A)</strong>表示，A表示为算法。</p>
+<p>常用算法的时间复杂度：</p>
+<ul>
+<li><p>O(1)    </p>
+<p>  基本运算 + - * / % 寻址</p>
+<p>  hash表的期望复杂度</p>
+</li>
+<li><p>O(logn)</p>
+<p>  二分查找</p>
+</li>
+<li><p>O(<code>n^(1/2</code>))</p>
+<p>  枚举公约数</p>
+</li>
+<li><p>O(nlogn)  </p>
+<p>  归并排序    </p>
+<p>  快速排序期望复杂度</p>
+<p>  基于比较排序的算法下界</p>
+</li>
+<li><p>O(<code>n^2</code>)</p>
+<p>  集合里枚举所有二元组</p>
+</li>
+<li><p>O(<code>n^3</code>) </p>
+<p>  集合里枚举所有三元组</p>
+</li>
+<li><p>O(<code>2^n</code>)</p>
+<p>  枚举全部子集</p>
+</li>
+<li><p>O(n!)</p>
+<p>  枚举全部排列</p>
+</li>
+<li><p>O(<code>n^n</code>)</p>
+<p>  枚举n维数组的全部元素</p>
+</li>
+</ul>
+<p>以上时间复杂度按照从小到大排列</p>
+<p>O(n)能做的事太多，另开一个章节讨论。</p>
+<h2 id="算法&amp;数据结构学习资源">算法&amp;数据结构学习资源</h2>
+<p>《算法导论》、《编程之美》、《剑指offer》、<a href="http://blog.csdn.net/v_JULY_v" target="_blank" rel="external">july博客</a>、leetcode 题库</p>
 <hr>
 <p>参考：</p>
-<ul>
-<li><a href="http://zh.wikipedia.org/wiki/SQL" target="_blank" rel="external">wiki</a></li>
-<li><a href="http://www.w3school.com.cn/sql/sql_syntax.asp" target="_blank" rel="external">w3cschool</a></li>
-</ul>
+<p><a href="http://weibo.com/julyweibo" target="_blank" rel="external">july</a>的面试算法讲座ppt</p>
+<p>leetcode 题库</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h3 id="SQL背景">SQL背景</h3>
-<p>SQL（Structured Query Language,结构化查询语言），是IBM公司最早使用在数据库系统中。1986年美国国家标准学会（ANSI）对SQL进行规范之后，以此作为关系式数据库管理系统的标准语言，1987]]>
+    <![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
+<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在l]]>
     </summary>
     
-      <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
+      <category term="alogrithm" scheme="http://yoursite.com/tags/alogrithm/"/>
     
-      <category term="SQL" scheme="http://yoursite.com/categories/SQL/"/>
+      <category term="structure" scheme="http://yoursite.com/tags/structure/"/>
+    
+      <category term="base" scheme="http://yoursite.com/categories/base/"/>
     
   </entry>
   
