@@ -4,7 +4,7 @@
   <subtitle><![CDATA[想看清这个世界]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-11-07T09:08:54.980Z</updated>
+  <updated>2014-11-07T14:06:21.368Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,13 +15,13 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
-    <title><![CDATA[Java 基础 小结]]></title>
+    <title><![CDATA[Java基础小结]]></title>
     <link href="http://yoursite.com/2014/11/07/Java-%E5%9F%BA%E7%A1%80%E5%B0%8F%E7%BB%93/"/>
     <id>http://yoursite.com/2014/11/07/Java-基础小结/</id>
     <published>2014-11-07T07:31:18.000Z</published>
-    <updated>2014-11-07T09:05:27.000Z</updated>
+    <updated>2014-11-07T09:17:08.000Z</updated>
     <content type="html"><![CDATA[<blockquote>
-<p>本文是为了将新手常犯的错误地方总结出来，不详细展开。</p>
+<p>本文只把新手理解不深的地方总结出来，故不详细展开。</p>
 </blockquote>
 <h3 id="抽象类与接口：">抽象类与接口：</h3>
 <h4 id="抽象类">抽象类</h4>
@@ -48,11 +48,8 @@
 <li><p>Hashtable与HashMap的区别：1.HashMap，不存在分类和排序方法，所以允许一个null键和多个null值；而Hashtable是不允许的。 2.Hashtable里面的方法有Synchronize，HashMap则没有。 3.Hashtable由于需要同步速度较慢，反之HashMap较快。</p>
 </li>
 <li><p>Collection FramWork的结构：</p>
-<p>  Collection<br>  ├List<br>  │├LinkedList<br>  │├ArrayList<br>  │└Vector<br>  │　└Stack<br>  └Set –hashset-Linkedhashset</p>
-<pre><code>  -<span class="ruby"><span class="constant">Treeset</span></span>
-</code></pre><p>  Map<br>  treemap<br>  ├Hashtable<br>  ├HashMap –WeakHashMap</p>
-<pre><code>       -<span class="ruby"><span class="constant">Linkedhashmap</span> </span>
-</code></pre></li>
+<p>  Collection<br>  ├List<br>  │├LinkedList<br>  │├ArrayList<br>  │└Vector<br>  │　└Stack<br>  └Set –hashset-Linkedhashset<br>  -Treeset<br>  Map<br>  treemap<br>  ├Hashtable<br>  ├HashMap –WeakHashMap<br>  -Linkedhashmap </p>
+</li>
 </ul>
 <h3 id="线程">线程</h3>
 <p>状态图（来源：<a href="http://www.tuicool.com/articles/7Vn26j" target="_blank" rel="external">http://www.tuicool.com/articles/7Vn26j</a>,这篇博文推荐一看）：</p>
@@ -66,11 +63,11 @@
 ]]></content>
     <summary type="html">
     <![CDATA[<blockquote>
-<p>本文是为了将新手常犯的错误地方总结出来，不详细展开。</p>
+<p>本文只把新手理解不深的地方总结出来，故不详细展开。</p>
 </blockquote>
 <h3 id="抽象类与接口：">抽象类与接口：</h3>
 <h4 id="抽象类">抽象类</h4>
-<p>适用情况：当出现很多类拥有共同方法属性的时候，可]]>
+<p>适用情况：当出现很多类拥有共同方法属性的时候，可以]]>
     </summary>
     
       <category term="深度：2" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A2/"/>
