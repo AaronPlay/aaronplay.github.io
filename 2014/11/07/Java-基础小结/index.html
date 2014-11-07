@@ -4,13 +4,20 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>blog upload | AaronPlay&#39;s Blog</title>
+    <title>Java 基础 小结 | AaronPlay&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="aaronplay">
     
-    <meta name="description" content="build up the blog with jekyll
-It is really funny to write in markdown.">
+    <meta name="description" content="本文是为了将新手常犯的错误地方总结出来，不详细展开。
+
+抽象类与接口：
+抽象类
+适用情况：当出现很多类拥有共同方法属性的时候，可以将它们共有的属性方法抽象出来，这样就形成了一个抽象类。
+判定条件：只要类中出现抽象方法便可判定为抽象类。
+接口的扩展
+使用情况：多重继承
+特征：1.只能定义静态常量 2.">
     
     
     
@@ -69,15 +76,15 @@ It is really funny to write in markdown.">
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2014/10/27/build-blog/" title="blog upload" itemprop="url">blog upload</a>
+      <a href="/2014/11/07/Java-基础小结/" title="Java 基础 小结" itemprop="url">Java 基础 小结</a>
   </h1>
   <p class="article-author">By
     
       <a href="http://yoursite.com" title="aaronplay">aaronplay</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-27T10:28:07.000Z" itemprop="datePublished">10月 27 2014</time>
-    更新日期:<time datetime="2014-10-27T10:31:52.000Z" itemprop="dateModified">10月 27 2014</time>
+    <time datetime="2014-11-07T07:31:18.000Z" itemprop="datePublished">11月 7 2014</time>
+    更新日期:<time datetime="2014-11-07T09:05:27.000Z" itemprop="dateModified">11月 7 2014</time>
     
   </p>
 </header>
@@ -86,21 +93,72 @@ It is really funny to write in markdown.">
 		
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#build_up_the_blog_with_jekyll"><span class="toc-number">1.</span> <span class="toc-text">build up the blog with jekyll</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类与接口："><span class="toc-number">1.</span> <span class="toc-text">抽象类与接口：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象类"><span class="toc-number">1.1.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口的扩展"><span class="toc-number">1.2.</span> <span class="toc-text">接口的扩展</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名内部类"><span class="toc-number">2.</span> <span class="toc-text">匿名内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式"><span class="toc-number">3.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection"><span class="toc-number">4.</span> <span class="toc-text">Collection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程"><span class="toc-number">5.</span> <span class="toc-text">线程</span></a></li></ol>
 		</div>
 		
-		<h3 id="build_up_the_blog_with_jekyll">build up the blog with jekyll</h3>
-<pre><code>It <span class="keyword">is</span> really funny <span class="keyword">to</span> <span class="keyword">write</span> <span class="keyword">in</span> markdown. 
-</code></pre>  
+		<blockquote>
+<p>本文是为了将新手常犯的错误地方总结出来，不详细展开。</p>
+</blockquote>
+<h3 id="抽象类与接口：">抽象类与接口：</h3>
+<h4 id="抽象类">抽象类</h4>
+<p>适用情况：当出现很多类拥有共同方法属性的时候，可以将它们共有的属性方法抽象出来，这样就形成了一个抽象类。</p>
+<p>判定条件：只要类中出现抽象方法便可判定为抽象类。</p>
+<h4 id="接口的扩展">接口的扩展</h4>
+<p>使用情况：多重继承</p>
+<p>特征：1.只能定义静态常量 2.方法默认为abstract</p>
+<h3 id="匿名内部类">匿名内部类</h3>
+<p>使用情况：某程度解决了多重继承的问题。匿名类的出现，使代码变得简洁很多。由于没有名字，所以有如下限制。</p>
+<p>注意：</p>
+<p>1.不能继承具体类 </p>
+<p>2.只能实现一个接口。  如 <code>A a = new A(){ public method(){}};</code>，就定义了一个匿名内部类。</p>
+<h3 id="设计模式">设计模式</h3>
+<p>1.注意单例模式的并发问题。</p>
+<h3 id="Collection">Collection</h3>
+<ul>
+<li><p>Collection是接口，Collections是具体类。</p>
+</li>
+<li><p>Collection与Map之间的UML图（来源：<a href="http://blog.csdn.net/bjyfb/article/details/8426030" target="_blank" rel="external">http://blog.csdn.net/bjyfb/article/details/8426030</a>）：<br><img src="http://aaronplayblog.qiniudn.com/Collection.png" alt=""></p>
+</li>
+<li><p>Set与Map的区别：1.Set不允许重复，Map允许。 2.实现接口不同，Set实现的为Cellection，Map实现的是Map接口。</p>
+</li>
+<li><p>Hashtable与HashMap的区别：1.HashMap，不存在分类和排序方法，所以允许一个null键和多个null值；而Hashtable是不允许的。 2.Hashtable里面的方法有Synchronize，HashMap则没有。 3.Hashtable由于需要同步速度较慢，反之HashMap较快。</p>
+</li>
+<li><p>Collection FramWork的结构：</p>
+<p>  Collection<br>  ├List<br>  │├LinkedList<br>  │├ArrayList<br>  │└Vector<br>  │　└Stack<br>  └Set –hashset-Linkedhashset</p>
+<pre><code>  -<span class="ruby"><span class="constant">Treeset</span></span>
+</code></pre><p>  Map<br>  treemap<br>  ├Hashtable<br>  ├HashMap –WeakHashMap</p>
+<pre><code>       -<span class="ruby"><span class="constant">Linkedhashmap</span> </span>
+</code></pre></li>
+</ul>
+<h3 id="线程">线程</h3>
+<p>状态图（来源：<a href="http://www.tuicool.com/articles/7Vn26j" target="_blank" rel="external">http://www.tuicool.com/articles/7Vn26j</a>,这篇博文推荐一看）：</p>
+<p><img src="http://aaronplayblog.qiniudn.com/java_thread_state.png" alt=""></p>
+<ul>
+<li><p>stop()方法以及suspend()不建议使用。stop方法是暴力停止线程，会造成很多不可知的影响。suspend不释放资源，会造成死锁。</p>
+</li>
+<li><p>推荐设置标志位和使用wait() / notify()、notifyAll()</p>
+</li>
+</ul>
+  
 	</div>
 		<footer class="article-footer clearfix">
 
+  <div class="article-tags">
+  
+  <span></span> <a href="/tags/深度：2/">深度：2</a>
+  </div>
+
+
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/Java/">Java</a>
+</div>
 
 
 
 <div class="article-share" id="share">
 
-  <div data-url="http://yoursite.com/2014/10/27/build-blog/" data-title="blog upload | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
+  <div data-url="http://yoursite.com/2014/11/07/Java-基础小结/" data-title="Java 基础 小结 | AaronPlay&#39;s Blog" data-tsina="2371169647" class="share clearfix">
   </div>
 
 </div>
@@ -109,19 +167,11 @@ It is really funny to write in markdown.">
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/2014/10/27/operation-system/" title="多线程探究">
-  <strong>PREVIOUS:</strong><br/>
-  <span>
-  多线程探究</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/2014/10/27/ADB/"  title="ADB浅尝">
+<a href="/2014/10/29/Android-functions/"  title="Android功能模块">
  <strong>NEXT:</strong><br/> 
- <span>ADB浅尝
+ <span>Android功能模块
 </span>
 </a>
 </div>
@@ -140,7 +190,7 @@ It is really funny to write in markdown.">
 
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
-  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#build_up_the_blog_with_jekyll"><span class="toc-number">1.</span> <span class="toc-text">build up the blog with jekyll</span></a></li></ol>
+  <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#抽象类与接口："><span class="toc-number">1.</span> <span class="toc-text">抽象类与接口：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象类"><span class="toc-number">1.1.</span> <span class="toc-text">抽象类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口的扩展"><span class="toc-number">1.2.</span> <span class="toc-text">接口的扩展</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#匿名内部类"><span class="toc-number">2.</span> <span class="toc-text">匿名内部类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#设计模式"><span class="toc-number">3.</span> <span class="toc-text">设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Collection"><span class="toc-number">4.</span> <span class="toc-text">Collection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#线程"><span class="toc-number">5.</span> <span class="toc-text">线程</span></a></li></ol>
   </div>
 
 <div id="asidepart">

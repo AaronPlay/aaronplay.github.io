@@ -4,7 +4,7 @@
   <subtitle><![CDATA[想看清这个世界]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2014-10-29T03:40:04.181Z</updated>
+  <updated>2014-11-07T09:08:54.980Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,11 +15,129 @@
   <generator uri="http://zespia.tw/hexo/">Hexo</generator>
   
   <entry>
+    <title><![CDATA[Java 基础 小结]]></title>
+    <link href="http://yoursite.com/2014/11/07/Java-%E5%9F%BA%E7%A1%80%E5%B0%8F%E7%BB%93/"/>
+    <id>http://yoursite.com/2014/11/07/Java-基础小结/</id>
+    <published>2014-11-07T07:31:18.000Z</published>
+    <updated>2014-11-07T09:05:27.000Z</updated>
+    <content type="html"><![CDATA[<blockquote>
+<p>本文是为了将新手常犯的错误地方总结出来，不详细展开。</p>
+</blockquote>
+<h3 id="抽象类与接口：">抽象类与接口：</h3>
+<h4 id="抽象类">抽象类</h4>
+<p>适用情况：当出现很多类拥有共同方法属性的时候，可以将它们共有的属性方法抽象出来，这样就形成了一个抽象类。</p>
+<p>判定条件：只要类中出现抽象方法便可判定为抽象类。</p>
+<h4 id="接口的扩展">接口的扩展</h4>
+<p>使用情况：多重继承</p>
+<p>特征：1.只能定义静态常量 2.方法默认为abstract</p>
+<h3 id="匿名内部类">匿名内部类</h3>
+<p>使用情况：某程度解决了多重继承的问题。匿名类的出现，使代码变得简洁很多。由于没有名字，所以有如下限制。</p>
+<p>注意：</p>
+<p>1.不能继承具体类 </p>
+<p>2.只能实现一个接口。  如 <code>A a = new A(){ public method(){}};</code>，就定义了一个匿名内部类。</p>
+<h3 id="设计模式">设计模式</h3>
+<p>1.注意单例模式的并发问题。</p>
+<h3 id="Collection">Collection</h3>
+<ul>
+<li><p>Collection是接口，Collections是具体类。</p>
+</li>
+<li><p>Collection与Map之间的UML图（来源：<a href="http://blog.csdn.net/bjyfb/article/details/8426030" target="_blank" rel="external">http://blog.csdn.net/bjyfb/article/details/8426030</a>）：<br><img src="http://aaronplayblog.qiniudn.com/Collection.png" alt=""></p>
+</li>
+<li><p>Set与Map的区别：1.Set不允许重复，Map允许。 2.实现接口不同，Set实现的为Cellection，Map实现的是Map接口。</p>
+</li>
+<li><p>Hashtable与HashMap的区别：1.HashMap，不存在分类和排序方法，所以允许一个null键和多个null值；而Hashtable是不允许的。 2.Hashtable里面的方法有Synchronize，HashMap则没有。 3.Hashtable由于需要同步速度较慢，反之HashMap较快。</p>
+</li>
+<li><p>Collection FramWork的结构：</p>
+<p>  Collection<br>  ├List<br>  │├LinkedList<br>  │├ArrayList<br>  │└Vector<br>  │　└Stack<br>  └Set –hashset-Linkedhashset</p>
+<pre><code>  -<span class="ruby"><span class="constant">Treeset</span></span>
+</code></pre><p>  Map<br>  treemap<br>  ├Hashtable<br>  ├HashMap –WeakHashMap</p>
+<pre><code>       -<span class="ruby"><span class="constant">Linkedhashmap</span> </span>
+</code></pre></li>
+</ul>
+<h3 id="线程">线程</h3>
+<p>状态图（来源：<a href="http://www.tuicool.com/articles/7Vn26j" target="_blank" rel="external">http://www.tuicool.com/articles/7Vn26j</a>,这篇博文推荐一看）：</p>
+<p><img src="http://aaronplayblog.qiniudn.com/java_thread_state.png" alt=""></p>
+<ul>
+<li><p>stop()方法以及suspend()不建议使用。stop方法是暴力停止线程，会造成很多不可知的影响。suspend不释放资源，会造成死锁。</p>
+</li>
+<li><p>推荐设置标志位和使用wait() / notify()、notifyAll()</p>
+</li>
+</ul>
+]]></content>
+    <summary type="html">
+    <![CDATA[<blockquote>
+<p>本文是为了将新手常犯的错误地方总结出来，不详细展开。</p>
+</blockquote>
+<h3 id="抽象类与接口：">抽象类与接口：</h3>
+<h4 id="抽象类">抽象类</h4>
+<p>适用情况：当出现很多类拥有共同方法属性的时候，可]]>
+    </summary>
+    
+      <category term="深度：2" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A2/"/>
+    
+      <category term="Java" scheme="http://yoursite.com/categories/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[Android功能模块]]></title>
+    <link href="http://yoursite.com/2014/10/29/Android-functions/"/>
+    <id>http://yoursite.com/2014/10/29/Android-functions/</id>
+    <published>2014-10-29T14:52:45.000Z</published>
+    <updated>2014-10-29T15:16:32.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="Android功能抽象">Android功能抽象</h1>
+<blockquote>
+<p>当你在有一定的项目累积之后，很自然地会有这样的想法。其实软件不外乎由两个模块组成，UI+功能模块。当然两个模块只是大类，每个模块的实现可是博大精深。本文主要是针对Android一些常用的功能做整理。游戏类和工具类均不太熟悉，先来个轻描淡写。</p>
+</blockquote>
+<h1 id="应用类">应用类</h1>
+<h2 id="CRM"><strong>CRM</strong></h2>
+<p>这个可以涵盖大部分应用，基本的加减乘除逻辑配合数据库就能实现。</p>
+<h3 id="评论">评论</h3>
+<h3 id="点赞">点赞</h3>
+<h2 id="照片">照片</h2>
+<h3 id="照片墙">照片墙</h3>
+<p>现在滤镜等美化工具已经是标配</p>
+<h2 id="分享">分享</h2>
+<h2 id="通讯">通讯</h2>
+<h2 id="推送">推送</h2>
+<h2 id="语音">语音</h2>
+<h2 id="地理信息位置">地理信息位置</h2>
+<h2 id="阅读">阅读</h2>
+<h2 id="音乐">音乐</h2>
+<h2 id="传感器类">传感器类</h2>
+<h3 id="gps">gps</h3>
+<h3 id="电子罗盘">电子罗盘</h3>
+<h3 id="摄像头">摄像头</h3>
+<h4 id="二维码">二维码</h4>
+<p>这个很常用，通过二维码很容易把虚拟跟现实结合起来。</p>
+<h4 id="笑脸识别">笑脸识别</h4>
+<h3 id="闪光灯">闪光灯</h3>
+<h1 id="游戏类">游戏类</h1>
+<h2 id="重力感应">重力感应</h2>
+<h1 id="工具类">工具类</h1>
+<p>这个涉及到底层比较多</p>
+<h2 id="rom的定制">rom的定制</h2>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="Android功能抽象">Android功能抽象</h1>
+<blockquote>
+<p>当你在有一定的项目累积之后，很自然地会有这样的想法。其实软件不外乎由两个模块组成，UI+功能模块。当然两个模块只是大类，每个模块的实现可是博大精深。本文主要是针对Andro]]>
+    </summary>
+    
+      <category term="功能模块" scheme="http://yoursite.com/tags/%E5%8A%9F%E8%83%BD%E6%A8%A1%E5%9D%97/"/>
+    
+      <category term="深度：1" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A1/"/>
+    
+      <category term="Android functions" scheme="http://yoursite.com/categories/Android-functions/"/>
+    
+  </entry>
+  
+  <entry>
     <title><![CDATA[Android PhotoWall]]></title>
     <link href="http://yoursite.com/2014/10/28/Android-PhotoWall/"/>
     <id>http://yoursite.com/2014/10/28/Android-PhotoWall/</id>
     <published>2014-10-28T15:29:38.000Z</published>
-    <updated>2014-10-29T02:27:41.000Z</updated>
+    <updated>2014-10-30T06:43:50.000Z</updated>
     <content type="html"><![CDATA[<h2 id="图片墙——通过网络加载">图片墙——通过网络加载</h2>
 <h3 id="UI">UI</h3>
 <p>图片墙常用的就是通过一个<code>GridView</code>+<code>Adapter</code>来定制的内部格式。</p>
@@ -56,6 +174,11 @@
 <ul>
 <li>通过LruCache来存储图片。</li>
 </ul>
+<h3 id="Bitmap编码方法">Bitmap编码方法</h3>
+<h4 id="通过BitmapFactory-方法">通过<code>BitmapFactory.方法</code></h4>
+<p>使用范围广，可用于制定file，inputstream…等多种方式。</p>
+<h4 id="android-provider-MediaStore-Images-Media-getBitmap(ContentResolver_cr,_Uri_url)_链接：http://developer-android-com/">android.provider.MediaStore.Images.Media.getBitmap(ContentResolver cr, Uri url) 链接：<a href="http://developer.android.com/reference/android/provider/MediaStore.Images.Media.html" target="_blank" rel="external">http://developer.android.com/</a></h4>
+<p>使用频率并不高。</p>
 <hr>
 <p>感谢：郭神</p>
 <p>参考：<a href="http://blog.csdn.net/guolin_blog/article/details/9526203" target="_blank" rel="external">http://blog.csdn.net/guolin_blog/article/details/9526203</a></p>
@@ -232,22 +355,6 @@
   </entry>
   
   <entry>
-    <title><![CDATA[博客搬家]]></title>
-    <link href="http://yoursite.com/2014/10/27/bloglist/"/>
-    <id>http://yoursite.com/2014/10/27/bloglist/</id>
-    <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T10:32:00.000Z</updated>
-    <content type="html"><![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://blog.csdn.net/aaronplay</a></h2>
-]]></content>
-    <summary type="html">
-    <![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://b]]>
-    </summary>
-    
-      <category term="Doc" scheme="http://yoursite.com/categories/Doc/"/>
-    
-  </entry>
-  
-  <entry>
     <title><![CDATA[ADB浅尝]]></title>
     <link href="http://yoursite.com/2014/10/27/ADB/"/>
     <id>http://yoursite.com/2014/10/27/ADB/</id>
@@ -290,6 +397,292 @@ adb [<span class="operator">-d</span>|<span class="operator">-e</span>|<span cla
       <category term="深度：*" scheme="http://yoursite.com/tags/%E6%B7%B1%E5%BA%A6%EF%BC%9A/"/>
     
       <category term="Android" scheme="http://yoursite.com/categories/Android/"/>
+    
+  </entry>
+  
+  <entry>
+    <title><![CDATA[算法与数据结构]]></title>
+    <link href="http://yoursite.com/2014/10/27/alogrithm-structure/"/>
+    <id>http://yoursite.com/2014/10/27/alogrithm-structure/</id>
+    <published>2014-10-27T10:28:07.000Z</published>
+    <updated>2014-10-27T11:21:03.000Z</updated>
+    <content type="html"><![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
+<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
+<blockquote>
+<p><strong>本文目的：打造一个算法模板，把适用情况总结出来，以便快速定位，套用。</strong></p>
+</blockquote>
+<h2 id="算法">算法</h2>
+<blockquote>
+<p>思考：在解决问题的时候，我们都希望直接能达到最好的效果，但人的思考是从简单开始，再到复杂，之后慢慢优化，所以不存在最优的效果，只有在目前所在的状况达到最优的答案，以后会有更好的算法。</p>
+</blockquote>
+<p>基于计算机运算的操作，不外乎就是对数据的增删查改，而这个操作的前提是找到需要目标。</p>
+<p><strong>注意好细节上处理，边界问题等，可以通过简单的举例来测试</strong></p>
+<ul>
+<li><p><strong>暴力法（枚举）</strong></p>
+<p>  这是我们最容易想到，就是一个个地尝试，相当万能的解法，但这种情况只适用于在计算机强大的能力下。这样的代码一般都是很短的，读起来也是最省力了。但一般不用，因为计算机可以帮助我们做得更多。</p>
+</li>
+<li><p><strong>排序</strong></p>
+<p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
+<p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
+<p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
+<p>  <img src="/img/raw/2014-10-06/sort.png" alt=""></p>
+<p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
+</li>
+<li><p><strong>查找</strong></p>
+<p>  为了更加高效地查找，我们一般在结构化的数据基础上进行查找。除非有特别的情况，否则已排序的数组的情况下，一般选用<strong>二分查找</strong>（能确保自己能正确写出来吗？）。</p>
+</li>
+</ul>
+<p><em>以上算法适用于在单个目标的查找修改，对于数据之间有关联，或者是对数据之间进行运算，可以选择更加优秀的算法来提高的性能。</em></p>
+<p>接下来，涉及到的算法按以下框架进行书写：</p>
+<blockquote>
+<p>原理：<br>适用情况：<br>实现框架：<br>例子：</p>
+</blockquote>
+<ul>
+<li><p><strong>递归</strong></p>
+<p>  原理：  根据目前的状况，等量改变参数，对自身函数进行调用。</p>
+<p>  适用情况：可以把当前问题抽象以层次为单位进行解决的，层与层之间的状态有关联。</p>
+<p>  实现框架：</p>
+<pre><code>  &gt;1.设置收敛界限
+  &gt;
+  &gt;2.递归公式
+</code></pre><p>  伪代码：</p>
+<pre><code>  <span class="keyword">int</span> reserve(TreeNode* root){
+          <span class="keyword">if</span>(root == nullptr) <span class="keyword">return</span> ; <span class="comment">//收敛边界</span>
+
+          <span class="keyword">if</span>(root-&gt;left == nullptr &amp;&amp; root-&gt;right == nullptr ) <span class="keyword">return</span> root-&gt;val; <span class="comment">// 收敛边界</span>
+
+          <span class="keyword">return</span> root-&gt;val + reserve(root-&gt;left) + reserve(root-&gt;right); <span class="comment">//递归公式 </span>
+  }
+</code></pre></li>
+</ul>
+<pre><code>例子：    二叉树的遍历，DFS
+</code></pre><ul>
+<li><p><strong>分治</strong>  </p>
+<p>  原理：将大的目标分解成小的目标，逐个击破，然后归并。 </p>
+<p>  适用情况：目标可以分解成子目标，子目标解决起来比较方便。而且有可能每个小目标不是没有关联的，会被重复利用。当遇到问题较为大型或复杂的时候要要考虑分而治之的方法。</p>
+<p>  实现框架：通常由递归进行实现。</p>
+<blockquote>
+<p>在递归的基础上，把数据域缩小。</p>
+</blockquote>
+<p>  伪代码：</p>
+<pre><code>  <span class="keyword">void</span> merge_sort(<span class="keyword">int</span> *<span class="built_in">list</span>, <span class="keyword">int</span> list_size){
+      <span class="keyword">if</span>(list_size&gt;<span class="number">1</span>){ <span class="comment">// 收敛条件</span>
+          <span class="comment">//分</span>
+          <span class="keyword">int</span> *list1 = <span class="built_in">list</span>;
+          <span class="keyword">int</span> list1_size = list_size / <span class="number">2</span>;
+          <span class="keyword">int</span> *list2 = <span class="built_in">list</span> + list_size/<span class="number">2</span>;
+          <span class="keyword">int</span> list2_size = list_size - list_size;
+
+          merge_sort(list1,list_size1);
+          merge_sort(list2,list_size2);
+
+          <span class="comment">//归并</span>
+          merge_array(list1,list_size1,list2,list_size2);
+      }
+  }
+</code></pre><p>  例子：归并排序，数的拆分 11 = 3 + 3 + 3 + 2。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>回溯</strong></p>
+<p>  原理：  若当前情况不合适时，回退到过去的某一个状态，进行另一种尝试。</p>
+<p>  适用情况：暴力搜寻法，当得知当前情况不能得到的结果的时候，后退（几步），然后进行重新选择，一般与递归合用。</p>
+<p>  实现框架：</p>
+<blockquote>
+<p>每次递归结束，恢复为之前的状态。</p>
+</blockquote>
+<pre><code>  int a[n];
+  <span class="keyword">try</span>(int i){
+      <span class="keyword">if</span>(i&gt;n)
+          输出结果
+      <span class="keyword">else</span>{
+          <span class="keyword">for</span>(int j= 下界；j &lt;= 上界; ++j){
+              <span class="keyword">if</span>(fun(j)) // 满足限界函数和约束条件
+              {
+                  a[i] = j;
+                  <span class="keyword">...</span> // 其他操作
+                  <span class="keyword">try</span>(i+<span class="number">1</span>);
+                  <span class="keyword">...</span> // 清理，回溯工作
+              }
+          }
+      }
+  }
+</code></pre><p>  例子：n皇后问题</p>
+</li>
+</ul>
+<ul>
+<li><strong>贪心</strong></li>
+</ul>
+<pre><code>原理：  在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，它所作的尽是某种意义上的局部最优解。
+
+适用情况：局部最优解能决定全局最优解，全局问题由子问题做出抉择，不能回退结果（动态规划可以），一般得到的不是最优解。
+
+实现框架：
+&gt;从问题的某一初始解出发
+
+    <span class="keyword">while</span>(能朝目标前进一步){
+        利用可行的决策，求出可行解的一个元素；
+    }
+    由所有解元素组合成问题的一个可行解;
+
+例子：背包问题
+</code></pre><ul>
+<li><strong>动态规划</strong></li>
+</ul>
+<pre><code>原理：全局解由局部最优解组成，每次的子问题都构造就进行一次决策。
+
+适用情况：一种自顶向下的算法，每一步都在决策都跟之前的结果相关（递归公式），根据之前的结果，能回退。
+
+实现框架：
+
+    <span class="number">1.</span>构造辅助空间
+
+    <span class="number">2.</span>初始化边界条件
+
+    <span class="number">3.</span>递归公式
+
+伪代码：    
+
+    <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>; <span class="built_in">j</span> &lt;= m ; ++<span class="built_in">j</span>)
+        xn<span class="matrix">[j]</span> = 初始值;
+
+    <span class="keyword">for</span>(<span class="built_in">i</span> = n-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">1</span>;<span class="built_in">i</span> = <span class="built_in">i</span>-<span class="number">1</span>)
+        <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>;<span class="built_in">j</span>&gt;=f(<span class="built_in">i</span>);<span class="built_in">j</span> = <span class="built_in">j</span>+<span class="number">1</span>)
+            x<span class="matrix">[i]</span><span class="matrix">[j]</span> = max()<span class="cell">{ 递推公式 };   
+
+    result = x[<span class="number">1</span>][<span class="number">1</span>]
+
+例子：<span class="number">01</span>背包问题</span>
+</code></pre><p><strong>优化：</strong></p>
+<ul>
+<li><p><strong>空间换时间</strong>  </p>
+<p>  hastable</p>
+</li>
+</ul>
+<p>递归变种：</p>
+<ul>
+<li><strong>深度搜索DFS</strong></li>
+</ul>
+<pre><code>原理：一层一层地往下寻找，到底之后，换另一个支路继续挖。
+
+适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。
+
+实现框架：
+    递归版，如上面的递归算法。
+
+    非递归:
+
+    通过栈来存储分支未访问节点
+
+
+例子：图类的应用
+</code></pre><ul>
+<li><p><strong>广度搜索BFS</strong></p>
+<p>  原理：先遍历当前层所有节点，再遍历下一层</p>
+<p>  适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。（同上），区别在于不知目标深度的时候，会陷入无穷分支。</p>
+<p>  实现框架：</p>
+<pre><code>  递归版，如上面的递归算法。
+
+  非递归:
+
+  1.定义两个队列q1、q2
+
+  2.把根结点放在q1
+
+  3.当前节点的子结点放在q1，直到q1为空
+
+  4.q2与q1交换，重复3，直到q1、q2均为空
+</code></pre></li>
+</ul>
+<pre><code>例子：图类的应用
+</code></pre><h2 id="数据结构">数据结构</h2>
+<p>砍不同的树，选择不同的刀子，会有不同的效果。而<strong>数据结构</strong>就是我们的刀子，通过它们的特性，可以帮我们更好地解决问题。</p>
+<p>基本数据结构有：</p>
+<ul>
+<li><p>数组</p>
+<pre><code>  巧用：利用数组的下标，可以使信息量不大的二维数组转换为一维。  
+</code></pre></li>
+<li><p>链表</p>
+<pre><code>  巧用：链表的强大主要在于指针上，通过改变指针的指向，可以像魔术师一样改变链表的结构。
+</code></pre></li>
+<li><p>二叉树</p>
+<pre><code>  巧用：跟链表相像，可以改变叶结点的指针，从而改变整棵树的结构。
+</code></pre></li>
+<li><p>栈</p>
+<pre><code>  特性：后进先出。
+</code></pre></li>
+<li><p>堆</p>
+<pre><code>  常用：最大堆或最小堆的构造。
+</code></pre><p>  数组和链表是很相似的数据结构，区别在于：</p>
+<pre><code>  <span class="keyword">*</span><span class="keyword">*</span>空间<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：需要预分配，耗空间  
+  链表：按需分配 
+
+  <span class="keyword">*</span><span class="keyword">*</span>访问效率<span class="keyword">*</span><span class="keyword">*</span>  
+  数组：支持随机访问  
+  链表：不支持
+</code></pre></li>
+</ul>
+<p>高级数据结构：</p>
+<ul>
+<li>哈希表</li>
+<li>树（红黑树，Trie树，后缀树，红黑树，B树，R树）</li>
+<li>图</li>
+</ul>
+<h2 id="常见时间复杂度的算法">常见时间复杂度的算法</h2>
+<p>但即使计算机运算能力再强大，也不应该这样白白浪费这么优秀的资源。接下来，我们要从性能的角度去分析算法。这时候，需要引入一个标准以判断哪些算法性能更优，我们引入时间复杂度和空间复杂度，用<strong>O(A)</strong>表示，A表示为算法。</p>
+<p>常用算法的时间复杂度：</p>
+<ul>
+<li><p>O(1)    </p>
+<p>  基本运算 + - * / % 寻址</p>
+<p>  hash表的期望复杂度</p>
+</li>
+<li><p>O(logn)</p>
+<p>  二分查找</p>
+</li>
+<li><p>O(<code>n^(1/2</code>))</p>
+<p>  枚举公约数</p>
+</li>
+<li><p>O(nlogn)  </p>
+<p>  归并排序    </p>
+<p>  快速排序期望复杂度</p>
+<p>  基于比较排序的算法下界</p>
+</li>
+<li><p>O(<code>n^2</code>)</p>
+<p>  集合里枚举所有二元组</p>
+</li>
+<li><p>O(<code>n^3</code>) </p>
+<p>  集合里枚举所有三元组</p>
+</li>
+<li><p>O(<code>2^n</code>)</p>
+<p>  枚举全部子集</p>
+</li>
+<li><p>O(n!)</p>
+<p>  枚举全部排列</p>
+</li>
+<li><p>O(<code>n^n</code>)</p>
+<p>  枚举n维数组的全部元素</p>
+</li>
+</ul>
+<p>以上时间复杂度按照从小到大排列</p>
+<p>O(n)能做的事太多，另开一个章节讨论。</p>
+<h2 id="算法&amp;数据结构学习资源">算法&amp;数据结构学习资源</h2>
+<p>《算法导论》、《编程之美》、《剑指offer》、<a href="http://blog.csdn.net/v_JULY_v" target="_blank" rel="external">july博客</a>、leetcode 题库</p>
+<hr>
+<p>参考：</p>
+<p><a href="http://weibo.com/julyweibo" target="_blank" rel="external">july</a>的面试算法讲座ppt</p>
+<p>leetcode 题库</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
+<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在l]]>
+    </summary>
+    
+      <category term="alogrithm" scheme="http://yoursite.com/tags/alogrithm/"/>
+    
+      <category term="structure" scheme="http://yoursite.com/tags/structure/"/>
+    
+      <category term="base" scheme="http://yoursite.com/categories/base/"/>
     
   </entry>
   
@@ -680,288 +1073,18 @@ c.next;
   </entry>
   
   <entry>
-    <title><![CDATA[算法与数据结构]]></title>
-    <link href="http://yoursite.com/2014/10/27/alogrithm-structure/"/>
-    <id>http://yoursite.com/2014/10/27/alogrithm-structure/</id>
+    <title><![CDATA[博客搬家]]></title>
+    <link href="http://yoursite.com/2014/10/27/bloglist/"/>
+    <id>http://yoursite.com/2014/10/27/bloglist/</id>
     <published>2014-10-27T10:28:07.000Z</published>
-    <updated>2014-10-27T11:21:03.000Z</updated>
-    <content type="html"><![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
-<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在leetcode刷题时的理解上对于算法以及数据结构的总结。    </p>
-<blockquote>
-<p><strong>本文目的：打造一个算法模板，把适用情况总结出来，以便快速定位，套用。</strong></p>
-</blockquote>
-<h2 id="算法">算法</h2>
-<blockquote>
-<p>思考：在解决问题的时候，我们都希望直接能达到最好的效果，但人的思考是从简单开始，再到复杂，之后慢慢优化，所以不存在最优的效果，只有在目前所在的状况达到最优的答案，以后会有更好的算法。</p>
-</blockquote>
-<p>基于计算机运算的操作，不外乎就是对数据的增删查改，而这个操作的前提是找到需要目标。</p>
-<p><strong>注意好细节上处理，边界问题等，可以通过简单的举例来测试</strong></p>
-<ul>
-<li><p><strong>暴力法（枚举）</strong></p>
-<p>  这是我们最容易想到，就是一个个地尝试，相当万能的解法，但这种情况只适用于在计算机强大的能力下。这样的代码一般都是很短的，读起来也是最省力了。但一般不用，因为计算机可以帮助我们做得更多。</p>
-</li>
-<li><p><strong>排序</strong></p>
-<p>  在所有的算法中，排序是很关键的环节，排序对我们的数据进行一定的预处理，虽然需要耗掉一定的时间复杂度。但磨刀不误砍柴工这个道理我们不是不知道的:)</p>
-<p>  排序的定义，可以理解为对无序的数据，进行有序（结构化）的处理，常用的有数组，还有更强大的数据结构，如链表，树等数据结构。</p>
-<p>  但是我们一般说的是数组上排序，常见的排序见下表：</p>
-<p>  <img src="/img/raw/2014-10-06/sort.png" alt=""></p>
-<p>  使用频率较高的有快速排序，合理设置其元量可以减低最坏时间的时间复杂度。</p>
-</li>
-<li><p><strong>查找</strong></p>
-<p>  为了更加高效地查找，我们一般在结构化的数据基础上进行查找。除非有特别的情况，否则已排序的数组的情况下，一般选用<strong>二分查找</strong>（能确保自己能正确写出来吗？）。</p>
-</li>
-</ul>
-<p><em>以上算法适用于在单个目标的查找修改，对于数据之间有关联，或者是对数据之间进行运算，可以选择更加优秀的算法来提高的性能。</em></p>
-<p>接下来，涉及到的算法按以下框架进行书写：</p>
-<blockquote>
-<p>原理：<br>适用情况：<br>实现框架：<br>例子：</p>
-</blockquote>
-<ul>
-<li><p><strong>递归</strong></p>
-<p>  原理：  根据目前的状况，等量改变参数，对自身函数进行调用。</p>
-<p>  适用情况：可以把当前问题抽象以层次为单位进行解决的，层与层之间的状态有关联。</p>
-<p>  实现框架：</p>
-<pre><code>  &gt;1.设置收敛界限
-  &gt;
-  &gt;2.递归公式
-</code></pre><p>  伪代码：</p>
-<pre><code>  <span class="keyword">int</span> reserve(TreeNode* root){
-          <span class="keyword">if</span>(root == nullptr) <span class="keyword">return</span> ; <span class="comment">//收敛边界</span>
-
-          <span class="keyword">if</span>(root-&gt;left == nullptr &amp;&amp; root-&gt;right == nullptr ) <span class="keyword">return</span> root-&gt;val; <span class="comment">// 收敛边界</span>
-
-          <span class="keyword">return</span> root-&gt;val + reserve(root-&gt;left) + reserve(root-&gt;right); <span class="comment">//递归公式 </span>
-  }
-</code></pre></li>
-</ul>
-<pre><code>例子：    二叉树的遍历，DFS
-</code></pre><ul>
-<li><p><strong>分治</strong>  </p>
-<p>  原理：将大的目标分解成小的目标，逐个击破，然后归并。 </p>
-<p>  适用情况：目标可以分解成子目标，子目标解决起来比较方便。而且有可能每个小目标不是没有关联的，会被重复利用。当遇到问题较为大型或复杂的时候要要考虑分而治之的方法。</p>
-<p>  实现框架：通常由递归进行实现。</p>
-<blockquote>
-<p>在递归的基础上，把数据域缩小。</p>
-</blockquote>
-<p>  伪代码：</p>
-<pre><code>  <span class="keyword">void</span> merge_sort(<span class="keyword">int</span> *<span class="built_in">list</span>, <span class="keyword">int</span> list_size){
-      <span class="keyword">if</span>(list_size&gt;<span class="number">1</span>){ <span class="comment">// 收敛条件</span>
-          <span class="comment">//分</span>
-          <span class="keyword">int</span> *list1 = <span class="built_in">list</span>;
-          <span class="keyword">int</span> list1_size = list_size / <span class="number">2</span>;
-          <span class="keyword">int</span> *list2 = <span class="built_in">list</span> + list_size/<span class="number">2</span>;
-          <span class="keyword">int</span> list2_size = list_size - list_size;
-
-          merge_sort(list1,list_size1);
-          merge_sort(list2,list_size2);
-
-          <span class="comment">//归并</span>
-          merge_array(list1,list_size1,list2,list_size2);
-      }
-  }
-</code></pre><p>  例子：归并排序，数的拆分 11 = 3 + 3 + 3 + 2。</p>
-</li>
-</ul>
-<ul>
-<li><p><strong>回溯</strong></p>
-<p>  原理：  若当前情况不合适时，回退到过去的某一个状态，进行另一种尝试。</p>
-<p>  适用情况：暴力搜寻法，当得知当前情况不能得到的结果的时候，后退（几步），然后进行重新选择，一般与递归合用。</p>
-<p>  实现框架：</p>
-<blockquote>
-<p>每次递归结束，恢复为之前的状态。</p>
-</blockquote>
-<pre><code>  int a[n];
-  <span class="keyword">try</span>(int i){
-      <span class="keyword">if</span>(i&gt;n)
-          输出结果
-      <span class="keyword">else</span>{
-          <span class="keyword">for</span>(int j= 下界；j &lt;= 上界; ++j){
-              <span class="keyword">if</span>(fun(j)) // 满足限界函数和约束条件
-              {
-                  a[i] = j;
-                  <span class="keyword">...</span> // 其他操作
-                  <span class="keyword">try</span>(i+<span class="number">1</span>);
-                  <span class="keyword">...</span> // 清理，回溯工作
-              }
-          }
-      }
-  }
-</code></pre><p>  例子：n皇后问题</p>
-</li>
-</ul>
-<ul>
-<li><strong>贪心</strong></li>
-</ul>
-<pre><code>原理：  在对问题求解时，总是做出在当前看来是最好的选择。也就是说，不从整体最优上加以考虑，它所作的尽是某种意义上的局部最优解。
-
-适用情况：局部最优解能决定全局最优解，全局问题由子问题做出抉择，不能回退结果（动态规划可以），一般得到的不是最优解。
-
-实现框架：
-&gt;从问题的某一初始解出发
-
-    <span class="keyword">while</span>(能朝目标前进一步){
-        利用可行的决策，求出可行解的一个元素；
-    }
-    由所有解元素组合成问题的一个可行解;
-
-例子：背包问题
-</code></pre><ul>
-<li><strong>动态规划</strong></li>
-</ul>
-<pre><code>原理：全局解由局部最优解组成，每次的子问题都构造就进行一次决策。
-
-适用情况：一种自顶向下的算法，每一步都在决策都跟之前的结果相关（递归公式），根据之前的结果，能回退。
-
-实现框架：
-
-    <span class="number">1.</span>构造辅助空间
-
-    <span class="number">2.</span>初始化边界条件
-
-    <span class="number">3.</span>递归公式
-
-伪代码：    
-
-    <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>; <span class="built_in">j</span> &lt;= m ; ++<span class="built_in">j</span>)
-        xn<span class="matrix">[j]</span> = 初始值;
-
-    <span class="keyword">for</span>(<span class="built_in">i</span> = n-<span class="number">1</span>;<span class="built_in">i</span>&gt;=<span class="number">1</span>;<span class="built_in">i</span> = <span class="built_in">i</span>-<span class="number">1</span>)
-        <span class="keyword">for</span>(<span class="built_in">j</span> = <span class="number">1</span>;<span class="built_in">j</span>&gt;=f(<span class="built_in">i</span>);<span class="built_in">j</span> = <span class="built_in">j</span>+<span class="number">1</span>)
-            x<span class="matrix">[i]</span><span class="matrix">[j]</span> = max()<span class="cell">{ 递推公式 };   
-
-    result = x[<span class="number">1</span>][<span class="number">1</span>]
-
-例子：<span class="number">01</span>背包问题</span>
-</code></pre><p><strong>优化：</strong></p>
-<ul>
-<li><p><strong>空间换时间</strong>  </p>
-<p>  hastable</p>
-</li>
-</ul>
-<p>递归变种：</p>
-<ul>
-<li><strong>深度搜索DFS</strong></li>
-</ul>
-<pre><code>原理：一层一层地往下寻找，到底之后，换另一个支路继续挖。
-
-适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。
-
-实现框架：
-    递归版，如上面的递归算法。
-
-    非递归:
-
-    通过栈来存储分支未访问节点
-
-
-例子：图类的应用
-</code></pre><ul>
-<li><p><strong>广度搜索BFS</strong></p>
-<p>  原理：先遍历当前层所有节点，再遍历下一层</p>
-<p>  适用情况：给定初始状态跟目标状态，要求判断初始状态跟目标状态是否有解。（同上），区别在于不知目标深度的时候，会陷入无穷分支。</p>
-<p>  实现框架：</p>
-<pre><code>  递归版，如上面的递归算法。
-
-  非递归:
-
-  1.定义两个队列q1、q2
-
-  2.把根结点放在q1
-
-  3.当前节点的子结点放在q1，直到q1为空
-
-  4.q2与q1交换，重复3，直到q1、q2均为空
-</code></pre></li>
-</ul>
-<pre><code>例子：图类的应用
-</code></pre><h2 id="数据结构">数据结构</h2>
-<p>砍不同的树，选择不同的刀子，会有不同的效果。而<strong>数据结构</strong>就是我们的刀子，通过它们的特性，可以帮我们更好地解决问题。</p>
-<p>基本数据结构有：</p>
-<ul>
-<li><p>数组</p>
-<pre><code>  巧用：利用数组的下标，可以使信息量不大的二维数组转换为一维。  
-</code></pre></li>
-<li><p>链表</p>
-<pre><code>  巧用：链表的强大主要在于指针上，通过改变指针的指向，可以像魔术师一样改变链表的结构。
-</code></pre></li>
-<li><p>二叉树</p>
-<pre><code>  巧用：跟链表相像，可以改变叶结点的指针，从而改变整棵树的结构。
-</code></pre></li>
-<li><p>栈</p>
-<pre><code>  特性：后进先出。
-</code></pre></li>
-<li><p>堆</p>
-<pre><code>  常用：最大堆或最小堆的构造。
-</code></pre><p>  数组和链表是很相似的数据结构，区别在于：</p>
-<pre><code>  <span class="keyword">*</span><span class="keyword">*</span>空间<span class="keyword">*</span><span class="keyword">*</span>  
-  数组：需要预分配，耗空间  
-  链表：按需分配 
-
-  <span class="keyword">*</span><span class="keyword">*</span>访问效率<span class="keyword">*</span><span class="keyword">*</span>  
-  数组：支持随机访问  
-  链表：不支持
-</code></pre></li>
-</ul>
-<p>高级数据结构：</p>
-<ul>
-<li>哈希表</li>
-<li>树（红黑树，Trie树，后缀树，红黑树，B树，R树）</li>
-<li>图</li>
-</ul>
-<h2 id="常见时间复杂度的算法">常见时间复杂度的算法</h2>
-<p>但即使计算机运算能力再强大，也不应该这样白白浪费这么优秀的资源。接下来，我们要从性能的角度去分析算法。这时候，需要引入一个标准以判断哪些算法性能更优，我们引入时间复杂度和空间复杂度，用<strong>O(A)</strong>表示，A表示为算法。</p>
-<p>常用算法的时间复杂度：</p>
-<ul>
-<li><p>O(1)    </p>
-<p>  基本运算 + - * / % 寻址</p>
-<p>  hash表的期望复杂度</p>
-</li>
-<li><p>O(logn)</p>
-<p>  二分查找</p>
-</li>
-<li><p>O(<code>n^(1/2</code>))</p>
-<p>  枚举公约数</p>
-</li>
-<li><p>O(nlogn)  </p>
-<p>  归并排序    </p>
-<p>  快速排序期望复杂度</p>
-<p>  基于比较排序的算法下界</p>
-</li>
-<li><p>O(<code>n^2</code>)</p>
-<p>  集合里枚举所有二元组</p>
-</li>
-<li><p>O(<code>n^3</code>) </p>
-<p>  集合里枚举所有三元组</p>
-</li>
-<li><p>O(<code>2^n</code>)</p>
-<p>  枚举全部子集</p>
-</li>
-<li><p>O(n!)</p>
-<p>  枚举全部排列</p>
-</li>
-<li><p>O(<code>n^n</code>)</p>
-<p>  枚举n维数组的全部元素</p>
-</li>
-</ul>
-<p>以上时间复杂度按照从小到大排列</p>
-<p>O(n)能做的事太多，另开一个章节讨论。</p>
-<h2 id="算法&amp;数据结构学习资源">算法&amp;数据结构学习资源</h2>
-<p>《算法导论》、《编程之美》、《剑指offer》、<a href="http://blog.csdn.net/v_JULY_v" target="_blank" rel="external">july博客</a>、leetcode 题库</p>
-<hr>
-<p>参考：</p>
-<p><a href="http://weibo.com/julyweibo" target="_blank" rel="external">july</a>的面试算法讲座ppt</p>
-<p>leetcode 题库</p>
+    <updated>2014-10-27T10:32:00.000Z</updated>
+    <content type="html"><![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://blog.csdn.net/aaronplay</a></h2>
 ]]></content>
     <summary type="html">
-    <![CDATA[<h1 id="算法与数据结构">算法与数据结构</h1>
-<p>在leetcode 刷了69道面试出现的算法题，用了偷懒的方法（先思考，然后看答案的方式），但收获依然很大。不过还是建议通过“思考-&gt;写代码-&gt;测试-&gt;优化”的方式学习，收获会更大。接下来是我在l]]>
+    <![CDATA[<h2 id="CSDN博客（旧）_http://blog-csdn-net/aaronplay">CSDN博客（旧） <a href="http://blog.csdn.net/aaronplay" target="_blank" rel="external">http://b]]>
     </summary>
     
-      <category term="alogrithm" scheme="http://yoursite.com/tags/alogrithm/"/>
-    
-      <category term="structure" scheme="http://yoursite.com/tags/structure/"/>
-    
-      <category term="base" scheme="http://yoursite.com/categories/base/"/>
+      <category term="Doc" scheme="http://yoursite.com/categories/Doc/"/>
     
   </entry>
   
